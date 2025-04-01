@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    /* Global font-family */
+    line-height: 1.6;
+    /* Improved line height */
+}
+
+/* Body Styles */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #87785e;
+    padding: 30px;
+}
+
+header h1 {
+    font-family: 'Rocher';
+    text-align: center;
+    font-size: 3rem;
+    /* Scalable font size */
+    margin: 0;
+}
+
+/* Font-face for 'Rocher' */
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+h2 {
+    font-size: 1.2rem;
+    /* Adjusted for readability */
+    font-family: 'Pacifico', sans-serif;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.info-section .text {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.info-section .image {
+    flex: 1;
+    padding: 40px;
+}
+
+.info-section .image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    /* Prevent images from growing too large */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Paragraph Style */
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    /* Larger, scalable text */
+}
+
+/* Button Section */
+.buttons-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* Consolidated both margin rules */
+}
+
+/* Button Styles */
+.button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    /* Adjusted for consistency */
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #5a3e2b;
+    color: #fff;
+    outline: none;
+}
+
+/* Login and Register Button Styles */
+.login-btn {
+    background-color: #5a3e2b;
+}
+
+.login-btn:hover {
+    background-color: #4b2e1d;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.register-btn {
+    background-color: #fda737;
+}
+
+.register-btn:hover {
+    background-color: #ffd23d;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Info Section Layout */
+.info-section.right {
+    flex-direction: row;
+}
+
+.info-section.left {
+    flex-direction: row-reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-section .text,
+    .info-section .image {
+        width: 100%;
+    }
+
+    .info-section .image img {
+        max-height: 300px;
+        /* Limit max height of images */
+    }
+
+    .buttons-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    /* Responsive Font Sizes */
+    body,
+    h1,
+    h2,
+    p {
+        font-size: 1rem;
+        /* Ensure responsiveness */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        /* Adjusted for smaller screens */
+    }
+
+    p {
+        font-size: 1.5rem;
+        /* Adjusted for better readability */
+    }
+}
+
+.catalog-section {
+    position: relative;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-image: url('/assets/images/books-3.jpg');
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    color: white; /* Ensure the text is white for contrast */
+    height: 200px; /* You can adjust this height */
+}
+
+.catalog-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure the overlay is above the image but behind the text */
+}
+
+.catalog-section h2 {
+    font-size: 2rem;
+    z-index: 2;
+    position: relative;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove any padding */
+}
+
+.catalog-link {
+    color: #e4b17b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.catalog-link:hover {
+    color: #f4a261; /* Brighten the hover color */
+    text-decoration: underline;
+    transform: scale(1.1) translateY(-5px); /* Make the link larger and lift it up */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow to make it pop */
+}
