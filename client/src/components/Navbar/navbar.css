@@ -4,9 +4,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #333;
+  background: #240f02;
   color: white;
-}
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); }
 
 .navbar ul {
   display: flex;
@@ -19,29 +19,39 @@
   margin-right: 1.5rem; /* Space between navbar items */
 }
 
+/* Link Styling */
 .navbar a {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 3px;
 }
 
+/* Hover Effect */
 .navbar a:hover {
   color: #f4a261;
 }
 
+/* Active Link */
+.navbar a.active {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8); /* White glow effect */
+  font-weight: bold;
+}
+
+/* Logo */
 .navbar img {
   width: 80px;
   height: auto;
   margin-right: 10px;
 }
 
-/* For responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem; /* Adjust padding on smaller screens */
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the left */
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .navbar ul {
@@ -53,5 +63,10 @@
   .navbar li {
     margin-right: 0;
     margin-bottom: 1rem; /* Space between navbar items in mobile view */
+  }
+
+  /* Make active link styling more subtle on mobile */
+  .navbar a.active {
+    border-bottom: 2px solid #ffcc00;
   }
 }

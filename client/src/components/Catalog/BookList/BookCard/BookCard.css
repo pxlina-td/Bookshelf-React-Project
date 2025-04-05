@@ -1,0 +1,38 @@
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Fixed width for each book card */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px); /* Adds a slight hover effect */
+  }
+  
+  .book-cover {
+    width: 150px;
+    height: 225px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 10px;
+  }
+  
+  .book-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .book-author {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+  }
+  

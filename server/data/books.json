@@ -1,0 +1,189 @@
+{
+  "book1": {
+    "_id": "1",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a racially divided southern town. It explores themes of innocence, racism, and moral growth, set against the backdrop of the Depression-era South.",
+    "genre": "Fiction, Drama",
+    "pageCount": 281,
+    "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVo4KYmcwAMzNQy2_Larrs0NfPGXuHEwkVQ&s",
+    "likeCount": 3,
+    "likedBy": ["user1", "user2", "user3"]
+  },
+  "book2": {
+    "_id": "2",
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "Set in a totalitarian society controlled by the Party and its omnipresent leader Big Brother, 1984 explores themes of surveillance, censorship, and oppression, offering a chilling commentary on power and control.",
+    "genre": "Dystopian, Political Fiction",
+    "pageCount": 328,
+    "coverImage": "https://biblio.bg/files/pic_prod_1/thumbs/300x457/1/IMP_1984_35373_1.jpg",
+    "likeCount": 2,
+    "likedBy": ["user4", "user5"]
+  },
+  "book3": {
+    "_id": "3",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "description": "A classic romantic novel that delves into the complex relationships between Elizabeth Bennet and the wealthy but aloof Mr. Darcy, examining themes of love, social class, and individual growth in 19th-century England.",
+    "genre": "Romance, Classic",
+    "pageCount": 432,
+    "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg",
+    "likeCount": 2,
+    "likedBy": ["user1", "user6"]
+  },
+  "book4": {
+    "_id": "4",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "Set in the 1920s, this novel explores the American Dream, love, and wealth through the eyes of Nick Carraway, who narrates the story of the enigmatic Jay Gatsby's tragic obsession with Daisy Buchanan.",
+    "genre": "Classic, Tragedy",
+    "pageCount": 180,
+    "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1738790966i/4671.jpg",
+    "likeCount": 3,
+    "likedBy": ["user2", "user3", "user7"]
+  },
+  "book5": {
+    "_id": "5",
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "description": "The tale of Captain Ahab's obsessive quest to kill the white whale Moby-Dick, this novel explores themes of vengeance, the limits of knowledge, and man's struggle against the forces of nature.",
+    "genre": "Adventure, Classic, Philosophy",
+    "pageCount": 635,
+    "coverImage": "https://m.media-amazon.com/images/I/91xNmlf86yL.jpg",
+    "likeCount": 2,
+    "likedBy": ["user8", "user4"]
+  },
+  "book6": {
+    "_id": "6",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "description": "The story of Holden Caulfield, a disillusioned teenager who struggles to find his place in the adult world, exploring themes of alienation, innocence, and the complexities of adolescence.",
+    "genre": "Fiction, Coming-of-Age",
+    "pageCount": 277,
+    "coverImage": "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg",
+    "likeCount": 2,
+    "likedBy": ["user9", "user1"]
+  },
+  "book7": {
+    "_id": "7",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "description": "In a futuristic world where technology controls every aspect of life, from reproduction to emotions, the novel critiques the loss of individuality and freedom in a society obsessed with pleasure and consumerism.",
+    "genre": "Dystopian, Science Fiction",
+    "pageCount": 311,
+    "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtkrn8iXfitBLLBWvLt7VnijFVeKpHknkxw&s",
+    "likeCount": 1,
+    "likedBy": ["user10"]
+  },
+  "book8": {
+    "_id": "8",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "description": "The journey of Bilbo Baggins, a humble hobbit who unexpectedly joins a group of dwarves on a quest to reclaim their homeland from the dragon Smaug, filled with adventure, treasure, and mythical creatures.",
+    "genre": "Fantasy, Adventure",
+    "pageCount": 310,
+    "coverImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg",
+    "likeCount": 2,
+    "likedBy": ["user6", "user1"]
+  },
+  "book9": {
+    "_id": "9",
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "description": "A young boy named Harry Potter discovers he is a wizard and embarks on a magical journey at Hogwarts School of Witchcraft and Wizardry, uncovering secrets about his past, friendship, and destiny.",
+    "genre": "Fantasy, Adventure",
+    "pageCount": 309,
+    "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+    "likeCount": 4,
+    "likedBy": ["user1", "user2", "user3", "user4"]
+  },
+  "book10": {
+    "_id": "10",
+    "title": "Roadmarks",
+    "author": "Roger Zelazny",
+    "description": "The Road runs from the unimaginable past to the far future, and those who travel it have access to the turnoffs leading to all times and places--even to the alternate time-streams of histories that never happened. Why the Dragons of Bel'kwinith made the Road--or who they are--no one knows. But the Road has always been there and for those who know how to find it, it always will be!",
+    "genre": "Fantasy, Science Fiction",
+    "pageCount": 	185,
+    "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/1f/Roadmarks_first.jpg",
+    "likeCount": 1,
+    "likedBy": ["user5"]
+  },
+  "book11": {
+    "_id": "11",
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "description": "A passionate and tragic tale of love and revenge between Heathcliff and Catherine Earnshaw, whose tumultuous relationship causes pain and destruction for everyone around them on the Yorkshire moors.",
+    "genre": "Gothic Fiction, Romance",
+    "pageCount": 416,
+    "coverImage": "https://images.squarespace-cdn.com/content/v1/5d40204073334a0001f2f066/1602439836717-GUAAN9EXNKDOGD9SKKZM/3674767a84174c9df69d8706e755e37a.jpg",
+    "likeCount": 2,
+    "likedBy": ["user6", "user10"]
+  },
+  "book12": {
+    "_id": "12",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "description": "The story of Victor Frankenstein, a young scientist who creates a monstrous creature that becomes an outcast. The novel explores themes of ambition, isolation, and the consequences of unchecked scientific experimentation.",
+    "genre": "Gothic Fiction, Horror",
+    "pageCount": 280,
+    "coverImage": "https://m.media-amazon.com/images/I/81TVqiv-ctL._AC_UF1000,1000_QL80_.jpg",
+    "likeCount": 2,
+    "likedBy": ["user3", "user8"]
+  },
+  "book13": {
+    "_id": "13",
+    "title": "The Odyssey",
+    "author": "Homer",
+    "description": "An epic poem that tells the story of Odysseus' ten-year journey home after the Trojan War, filled with encounters with gods, monsters, and temptations.",
+    "genre": "Epic Poetry, Adventure",
+    "pageCount": 380,
+    "coverImage": "https://mpd-biblio-covers.imgix.net/9780312869014.jpg",
+    "likeCount": 2,
+    "likedBy": ["user7", "user9"]
+  },
+  "book14": {
+    "_id": "14",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "description": "The first volume in the epic saga where Frodo Baggins and his companions set out to destroy the One Ring to prevent Sauron from ruling Middle-earth.",
+    "genre": "Fantasy, Adventure",
+    "pageCount": 423,
+    "coverImage": "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif",
+    "likeCount": 1,
+    "likedBy": ["user2"]
+  },
+  "book15": {
+    "_id": "15",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "description": "The story of Dorian Gray, a handsome young man whose portrait ages while he remains youthful, reflecting his inner corruption and decadence.",
+    "genre": "Philosophical Fiction, Gothic",
+    "pageCount": 254,
+    "coverImage": "https://m.media-amazon.com/images/I/71GdwPedEFL.jpg",
+    "likeCount": 1,
+    "likedBy": ["user10"]
+  },
+  "book16": {
+    "_id": "16",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "description": "A psychological novel about Raskolnikov, a young man who commits a murder and wrestles with guilt and the morality of his actions, exploring themes of redemption and justice.",
+    "genre": "Psychological Fiction, Philosophy",
+    "pageCount": 430,
+    "coverImage": "https://knigomania.bg/media/catalog/product/cache/84fd64f5684a1a3a4881cbc22d142c88/c/r/crime-and-punishment-9780451530066.jpg",
+    "likeCount": 0,
+    "likedBy": []
+  },
+  "book17": {
+    "_id": "17",
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "description": "A sweeping epic about Russian aristocracy during the Napoleonic Wars, examining personal and political conflicts, and exploring love, war, and the human experience.",
+    "genre": "Historical Fiction, Epic",
+    "pageCount": 1225,
+    "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1686602284i/177106015.jpg",
+    "likeCount": 1,
+    "likedBy": ["user5"]
+  }
+}

@@ -7,22 +7,15 @@
   min-height: 100vh;
   padding: 20px;
   position: relative;
-  background-color: #efa249; /* Set a fallback background color */
+ /* Background Image */
+ 
+ background-size: cover; /* Ensures the image covers the entire container */
+ background-position: center; /* Centers the image */
+ background-repeat: no-repeat; /* Prevents tiling */
+ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/images/bg-books.jpg");
 }
 
-.auth-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("/assets/images/bg-books.jpg"); /* Ensure path is correct */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1; /* This ensures the background stays behind the content */
-  opacity: 0.5; /* Optional: dim the background for readability */
-}
+
 
 .auth-form {
   display: flex;
@@ -77,23 +70,15 @@
 }
 
 .error-message {
-  color: red;
-}
-
-/* Optional: Specific Font */
-h1 {
-  font-family: 'Rocher', sans-serif;
+  color: #ffffff;
+  background-color: #f44336; /* Red error message */
+  border: 2px solid #d32f2f;
   text-align: center;
-  font-size: 3rem;
-  margin: 0;
+  font-weight: bold;
   padding: 10px;
-  background-color: white; /* White background behind the header */
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
 }
 
-/* Font-face for 'Rocher' */
-@font-face {
-  font-family: 'Rocher';
-  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
-}
