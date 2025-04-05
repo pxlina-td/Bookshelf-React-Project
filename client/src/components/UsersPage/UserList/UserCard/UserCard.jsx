@@ -1,27 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // For navigation to user's profile page
-import './UserCard.css'; // External CSS for styling
+import { Link } from 'react-router-dom';
+import './UserCard.css';
 
 // UserCard Component
-export default function UserCard({ user }) {
+const UserCard = ({ user }) => {
   return (
-    <div className="user-card">
-      {/* Profile picture */}
-      <img
-        src={user.profilePic || '/assets/images/default-avatar.png'} // Default profile image if not provided
-        alt={`${user.username}'s avatar`}
-        className="user-avatar"
-      />
-      <div className="user-info">
-        {/* Username with Link to user's profile page */}
-        <h3>
-          <Link to={`/profile/${user.username}`} className="user-link">
-            {user.username}
-          </Link>
-        </h3>
-        {/* Full Name */}
-        <p className="user-name">{user.name}</p>
+    <Link to={`/profile/${user.username}`} className="user-card-link">
+      <div className="user-card">
+        {/* Profile picture */}
+        <img
+          src={user.profilePic || '/assets/images/default-avatar.jpg'} // Default profile image if not provided
+          alt={`${user.username}'s avatar`}
+          className="user-avatar"
+        />
+        <div className="user-info">
+          {/* Username with Link to user's profile page */}
+          <h3 className="user-link">{user.username}</h3>
+          {/* Full Name */}
+          <p className="user-name">{user.name}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
-}
+};
+
+export default UserCard;

@@ -24,14 +24,14 @@ export default function Navbar() {
             Catalog
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/users" className={({ isActive }) => (isActive ? "active" : "")}>
+            Users
+          </NavLink>
+        </li>
 
         {!isLoggedIn() ? (
           <>
-          <li>
-              <NavLink to="/users" className={({ isActive }) => (isActive ? "active" : "")}>
-                Users
-              </NavLink>
-            </li>
             <li>
               <NavLink to="/register" className={({ isActive }) => (isActive ? "active" : "")}>
                 Register

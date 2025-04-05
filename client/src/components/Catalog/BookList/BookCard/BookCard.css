@@ -5,10 +5,7 @@
     width: 200px; /* Fixed width for each book card */
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-    border: 1px solid #ccc;
-    border-radius: 10px;
     padding: 15px;
-    background-color: #f9f9f9;
   }
   
   .book-card:hover {
@@ -19,7 +16,6 @@
     width: 150px;
     height: 225px;
     object-fit: cover; /* Ensures the image covers the area without distortion */
-    border-radius: 10px;
   }
   
   .book-title {

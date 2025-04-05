@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UserList.css';
 import { getAllUsers } from '../../../api/users-api';
-import UserCard from './UserCard/UserCard';
-
+import UserCard from './UserCard/UserCard'; // Importing the reusable UserCard component
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -27,7 +26,7 @@ const UserList = () => {
         }
       } catch (err) {
         console.error(err);
-        setError('An error occurred while fetching users.');
+        setError('An error occurred.');
       } finally {
         setLoading(false);
       }
