@@ -1,48 +1,80 @@
-/* Profile Page Styles */
 .profile-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-container h1 {
-    font-size: 1.5rem;
-    color: #444;
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .profile-container p {
-    font-size: 1rem;
-    color: #666;
-    margin: 10px 0;
-    line-height: 1.5;
-  }
-  
-  .profile-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: 20px;
-    object-fit: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 1.1rem;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .loading-message {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-  }
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-header {
+  margin-bottom: 20px;
+}
+
+.profile-username {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-image-container {
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.profile-info {
+  text-align: left;
+}
+
+.profile-info-item {
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.profile-info-item strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.profile-shelf {
+  margin-top: 20px;
+}
+
+.profile-shelf ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-shelf li {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.profile-shelf strong {
+  font-size: 1.5rem; /* Increase the font size */
+  color: #2e23ff;    /* Set a duff color, for example, a warm brownish shade */
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.loading-message {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 20px;
+}

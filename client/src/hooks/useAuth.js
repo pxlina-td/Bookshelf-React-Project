@@ -26,3 +26,22 @@ export const useRegister = () => {
 
     return registerHandler;
 }
+
+export const handleLogout = async () => {
+    const token = sessionStorage.getItem('accessToken');
+    if (!token) return;
+  
+    try {
+      await fetch('/users/logout', {
+        method: 'GET',
+        headers: {
+          'X-Authorization': token,
+        },
+      });
+  
+      sessionStorage.removeItem('accessToken');
+      navigate('/login');  // Redirect to login after logout
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };

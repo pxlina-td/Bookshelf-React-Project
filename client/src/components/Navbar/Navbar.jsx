@@ -2,9 +2,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
+import {handleLogout} from "../../hooks/useAuth";
 
 export default function Navbar() {
-  const { isAuthenticated} = useContext(AuthContext);
+  const { userId, isAuthenticated } = useContext(AuthContext);
+
   return (
     <nav className="navbar">
       <img src="/assets/images/circle-logo.png" alt="Logo" />
@@ -36,12 +38,12 @@ export default function Navbar() {
         ) : (
           <>
             <li>
-              <NavLink to="/profile/:id" className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to={`/profile/${userId}`} className={({ isActive }) => (isActive ? "active" : "")}>
                 Profile
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" >Log out</NavLink>
+              <NavLink to="/" onClick={handleLogout}>Log out</NavLink>
             </li>
           </>
         )}

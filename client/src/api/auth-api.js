@@ -8,3 +8,5 @@ export const login = async (email, password) => {
 }
 
 export const register = (userData) => post(`${baseUrl}/register`, userData);
+
+export const getMe = () => get(`${baseUrl}/me`);
