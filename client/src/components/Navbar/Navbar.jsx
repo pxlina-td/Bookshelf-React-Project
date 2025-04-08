@@ -2,7 +2,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
-import {handleLogout} from "../../hooks/useAuth";
 
 export default function Navbar() {
   const { userId, isAuthenticated } = useContext(AuthContext);
@@ -43,7 +42,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" onClick={handleLogout}>Log out</NavLink>
+              <NavLink to="/" >Log out</NavLink>
             </li>
           </>
         )}
