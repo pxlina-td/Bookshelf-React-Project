@@ -1,130 +1,103 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation after successful registration
-import { registerUser } from '../api/users-api'; // Import the registerUser function
-import '../styles/auth.css'; // External CSS for styling
+import { useNavigate } from 'react-router-dom'; 
+import '../styles/auth.css'; 
+import { useRegister } from '../hooks/useAuth';
+import { useForm } from '../hooks/useForm';
+
+const initialValues = {
+  name: '',
+  email: '',
+  password: '',
+  repassword: '',
+  profilepic: '',
+  bio: ''
+};
 
 const Register = () => {
-  // State for form fields
-  const [formData, setFormData] = useState({
-    username: '',
-    name: '',
-    password: '',
-    repeatPassword: '',
-    profilePic: '',
-    bio: '',
-  });
+	const [error, setError] = useState('');
+  const register = useRegister();
+  const navigate = useNavigate();
 
-  // State for handling errors and loading state
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Use this to navigate after successful registration
-
-  // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(''); // Reset error
-
-    // Validate passwords match
-    if (formData.password !== formData.repeatPassword) {
-      setError('Passwords do not match.');
-      setLoading(false);
-      return;
-    }
-
-    // Prepare the payload
-    const payload = {
-      username: formData.username,
-      name: formData.name,
-      password: formData.password,
-      profilePic: formData.profilePic,
-      bio: formData.bio,
-    };
+  const registerHandler = async(values) => {
+		const { email, password, repassword, name, profilepic, bio } = values;
+		if(password !== repassword){
+			setError('Passwords do not match!');
+			return;
+		}
 
     try {
-      // Call the registerUser function from user-api.js
-      const result = await registerUser(payload);
-
-      // Check if registration was successful
-      if (result) {
-        // Assuming result includes a token or user ID (e.g., result.token or result._id)
-        localStorage.setItem('token', result.token); // Save token to localStorage
-
-        // Redirect to the profile page
-        navigate(`/profile/${result._id}`); // Adjust the path if needed based on your backend response
-      } else {
-        setError('Something went wrong during registration.');
-      }
-    } catch (err) {
-      setError('Error occurred during registration.');
-    } finally {
-      setLoading(false);
+      await register(email, password, name, profilepic, bio);
+      navigate('/');
+    } catch (err){
+			setError(err.message);
+      console.log(err.message);
     }
   };
+
+	const {values, changeHandler, submitHandler} = useForm(initialValues,registerHandler)
 
   return (
     <div className="auth-container">
       <div className="auth-background"></div>
       <h1>Register</h1>
-      {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit} className="auth-form">
+      <form onSubmit={submitHandler} className="auth-form">
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          placeholder="Username"
+					id="name"
+          name="name"
+          value={values.name}
+          onChange={changeHandler}
+          placeholder="Full Name"
           required
         />
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Full Name"
+         <input
+          type="email"
+					id="email"
+          name="email"
+          value={values.email}
+          onChange={changeHandler}
+          placeholder="email@gmail.com"
           required
         />
         <input
           type="password"
+					id="password"
           name="password"
-          value={formData.password}
-          onChange={handleChange}
+          value={values.password}
+          onChange={changeHandler}
           placeholder="Password"
           required
         />
         <input
           type="password"
-          name="repeatPassword"
-          value={formData.repeatPassword}
-          onChange={handleChange}
+					id="repassword"
+          name="repassword"
+          value={values.repassword}
+          onChange={changeHandler}
           placeholder="Repeat Password"
           required
         />
         <input
           type="url"
-          name="profilePic"
-          value={formData.profilePic}
-          onChange={handleChange}
+					id="profilepic"
+          name="profilepic"
+          value={values.profilepic}
+          onChange={changeHandler}
           placeholder="Profile Picture URL (optional)"
         />
         <textarea
           name="bio"
-          value={formData.bio}
-          onChange={handleChange}
+					id="bio"
+          value={values.bio}
+          onChange={changeHandler}
           placeholder="Bio (optional)"
         />
-        <button type="submit" className="auth-button" disabled={loading}>
-          {loading ? 'Registering...' : 'Register'}
-        </button>
+				{error && (
+					<p className='error-message'>
+						<span>{error}</span>
+					</p>
+				)}
+        <button type="submit" className="auth-button">Register</button>
       </form>
     </div>
   );

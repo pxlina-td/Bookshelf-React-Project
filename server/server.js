@@ -1359,308 +1359,216 @@
         }
     };
     var seedData = {
-        recipes: {
-            "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Easy Lasagna",
-                img: "assets/lasagna.jpg",
-                ingredients: [
-                    "1 tbsp Ingredient 1",
-                    "2 cups Ingredient 2",
-                    "500 g  Ingredient 3",
-                    "25 g Ingredient 4"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551279012
+        books: {
+            "book1": {
+                "_id": "1",
+                "title": "To Kill a Mockingbird",
+                "author": "Harper Lee",
+                "description": "A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a racially divided southern town. It explores themes of innocence, racism, and moral growth, set against the backdrop of the Depression-era South.",
+                "genre": "Fiction, Drama",
+                "pageCount": 281,
+                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVo4KYmcwAMzNQy2_Larrs0NfPGXuHEwkVQ&s",
+                "likeCount": 3
             },
-            "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Grilled Duck Fillet",
-                img: "assets/roast.jpg",
-                ingredients: [
-                    "500 g  Ingredient 1",
-                    "3 tbsp Ingredient 2",
-                    "2 cups Ingredient 3"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551344360
+            "book2": {
+                "_id": "2",
+                "title": "1984",
+                "author": "George Orwell",
+                "description": "Set in a totalitarian society controlled by the Party and its omnipresent leader Big Brother, 1984 explores themes of surveillance, censorship, and oppression, offering a chilling commentary on power and control.",
+                "genre": "Dystopian, Political Fiction",
+                "pageCount": 328,
+                "coverImage": "https://biblio.bg/files/pic_prod_1/thumbs/300x457/1/IMP_1984_35373_1.jpg",
+                "likeCount": 2
             },
-            "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Roast Trout",
-                img: "assets/fish.jpg",
-                ingredients: [
-                    "4 cups Ingredient 1",
-                    "1 tbsp Ingredient 2",
-                    "1 tbsp Ingredient 3",
-                    "750 g  Ingredient 4",
-                    "25 g Ingredient 5"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551388703
-            }
-        },
-        comments: {
-            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                content: "Great recipe!",
-                recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-                _createdOn: 1614260681375,
-                _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-            }
-        },
-        records: {
-            i01: {
-                name: "John1",
-                val: 1,
-                _createdOn: 1613551388703
+            "book3": {
+                "_id": "3",
+                "title": "Pride and Prejudice",
+                "author": "Jane Austen",
+                "description": "A classic romantic novel that delves into the complex relationships between Elizabeth Bennet and the wealthy but aloof Mr. Darcy, examining themes of love, social class, and individual growth in 19th-century England.",
+                "genre": "Romance, Classic",
+                "pageCount": 432,
+                "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg",
+                "likeCount": 2
             },
-            i02: {
-                name: "John2",
-                val: 1,
-                _createdOn: 1613551388713
+            "book4": {
+                "_id": "4",
+                "title": "The Great Gatsby",
+                "author": "F. Scott Fitzgerald",
+                "description": "Set in the 1920s, this novel explores the American Dream, love, and wealth through the eyes of Nick Carraway, who narrates the story of the enigmatic Jay Gatsby's tragic obsession with Daisy Buchanan.",
+                "genre": "Classic, Tragedy",
+                "pageCount": 180,
+                "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1738790966i/4671.jpg",
+                "likeCount": 3
             },
-            i03: {
-                name: "John3",
-                val: 2,
-                _createdOn: 1613551388723
+            "book5": {
+                "_id": "5",
+                "title": "Moby-Dick",
+                "author": "Herman Melville",
+                "description": "The tale of Captain Ahab's obsessive quest to kill the white whale Moby-Dick, this novel explores themes of vengeance, the limits of knowledge, and man's struggle against the forces of nature.",
+                "genre": "Adventure, Classic, Philosophy",
+                "pageCount": 635,
+                "coverImage": "https://m.media-amazon.com/images/I/91xNmlf86yL.jpg",
+                "likeCount": 2
             },
-            i04: {
-                name: "John4",
-                val: 2,
-                _createdOn: 1613551388733
+            "book6": {
+                "_id": "6",
+                "title": "The Catcher in the Rye",
+                "author": "J.D. Salinger",
+                "description": "The story of Holden Caulfield, a disillusioned teenager who struggles to find his place in the adult world, exploring themes of alienation, innocence, and the complexities of adolescence.",
+                "genre": "Fiction, Coming-of-Age",
+                "pageCount": 277,
+                "coverImage": "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg",
+                "likeCount": 2
             },
-            i05: {
-                name: "John5",
-                val: 2,
-                _createdOn: 1613551388743
+            "book7": {
+                "_id": "7",
+                "title": "Brave New World",
+                "author": "Aldous Huxley",
+                "description": "In a futuristic world where technology controls every aspect of life, from reproduction to emotions, the novel critiques the loss of individuality and freedom in a society obsessed with pleasure and consumerism.",
+                "genre": "Dystopian, Science Fiction",
+                "pageCount": 311,
+                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtkrn8iXfitBLLBWvLt7VnijFVeKpHknkxw&s",
+                "likeCount": 1
             },
-            i06: {
-                name: "John6",
-                val: 3,
-                _createdOn: 1613551388753
+            "book8": {
+                "_id": "8",
+                "title": "The Hobbit",
+                "author": "J.R.R. Tolkien",
+                "description": "The journey of Bilbo Baggins, a humble hobbit who unexpectedly joins a group of dwarves on a quest to reclaim their homeland from the dragon Smaug, filled with adventure, treasure, and mythical creatures.",
+                "genre": "Fantasy, Adventure",
+                "pageCount": 310,
+                "coverImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg",
+                "likeCount": 2
             },
-            i07: {
-                name: "John7",
-                val: 3,
-                _createdOn: 1613551388763
+            "book9": {
+                "_id": "9",
+                "title": "Harry Potter and the Sorcerer's Stone",
+                "author": "J.K. Rowling",
+                "description": "A young boy named Harry Potter discovers he is a wizard and embarks on a magical journey at Hogwarts School of Witchcraft and Wizardry, uncovering secrets about his past, friendship, and destiny.",
+                "genre": "Fantasy, Adventure",
+                "pageCount": 309,
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+                "likeCount": 4
             },
-            i08: {
-                name: "John8",
-                val: 2,
-                _createdOn: 1613551388773
+            "book10": {
+                "_id": "10",
+                "title": "Roadmarks",
+                "author": "Roger Zelazny",
+                "description": "The Road runs from the unimaginable past to the far future, and those who travel it have access to the turnoffs leading to all times and places--even to the alternate time-streams of histories that never happened. Why the Dragons of Bel'kwinith made the Road--or who they are--no one knows. But the Road has always been there and for those who know how to find it, it always will be!",
+                "genre": "Fantasy, Science Fiction",
+                "pageCount": 185,
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/1f/Roadmarks_first.jpg",
+                "likeCount": 1
             },
-            i09: {
-                name: "John9",
-                val: 3,
-                _createdOn: 1613551388783
+            "book11": {
+                "_id": "11",
+                "title": "Wuthering Heights",
+                "author": "Emily Brontë",
+                "description": "A passionate and tragic tale of love and revenge between Heathcliff and Catherine Earnshaw, whose tumultuous relationship causes pain and destruction for everyone around them on the Yorkshire moors.",
+                "genre": "Gothic Fiction, Romance",
+                "pageCount": 416,
+                "coverImage": "https://images.squarespace-cdn.com/content/v1/5d40204073334a0001f2f066/1602439836717-GUAAN9EXNKDOGD9SKKZM/3674767a84174c9df69d8706e755e37a.jpg",
+                "likeCount": 2
             },
-            i10: {
-                name: "John10",
-                val: 1,
-                _createdOn: 1613551388793
-            }
-        },
-        catches: {
-            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                angler: "Paulo Admorim",
-                weight: 636,
-                species: "Atlantic Blue Marlin",
-                location: "Vitoria, Brazil",
-                bait: "trolled pink",
-                captureTime: 80,
-                _createdOn: 1614760714812,
-                _id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
+            "book12": {
+                "_id": "12",
+                "title": "Frankenstein",
+                "author": "Mary Shelley",
+                "description": "The story of Victor Frankenstein, a young scientist who creates a monstrous creature that becomes an outcast. The novel explores themes of ambition, isolation, and the consequences of unchecked scientific experimentation.",
+                "genre": "Horror",
+                "pageCount": 280,
+                "coverImage": "https://m.media-amazon.com/images/I/81TVqiv-ctL._AC_UF1000,1000_QL80_.jpg",
+                "likeCount": 2
             },
-            "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                angler: "John Does",
-                weight: 554,
-                species: "Atlantic Blue Marlin",
-                location: "Buenos Aires, Argentina",
-                bait: "trolled pink",
-                captureTime: 120,
-                _createdOn: 1614760782277,
-                _id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-            }
-        },
-        furniture: {
-        },
-        orders: {
-        },
-        movies: {
-            "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Black Widow",
-                description: "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-                img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-                _createdOn: 1614935055353,
-                _id: "1240549d-f0e0-497e-ab99-eb8f703713d7"
+            "book13": {
+                "_id": "13",
+                "title": "The Odyssey",
+                "author": "Homer",
+                "description": "An epic poem that tells the story of Odysseus' ten-year journey home after the Trojan War, filled with encounters with gods, monsters, and temptations.",
+                "genre": "Poetry",
+                "pageCount": 380,
+                "coverImage": "https://mpd-biblio-covers.imgix.net/9780312869014.jpg",
+                "likeCount": 2
             },
-            "143e5265-333e-4150-80e4-16b61de31aa0": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Wonder Woman 1984",
-                description: "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-                img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-                _createdOn: 1614935181470,
-                _id: "143e5265-333e-4150-80e4-16b61de31aa0"
+            "book14": {
+                "_id": "14",
+                "title": "The Lord of the Rings: The Fellowship of the Ring",
+                "author": "J.R.R. Tolkien",
+                "description": "The first volume in the epic saga where Frodo Baggins and his companions set out to destroy the One Ring to prevent Sauron from ruling Middle-earth.",
+                "genre": "Fantasy, Adventure",
+                "pageCount": 423,
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif",
+                "likeCount": 1
             },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Top Gun 2",
-                description: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-                img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-                _createdOn: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
-            }
-        },
-        likes: {
-        },
-        ideas: {
-            "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Best Pilates Workout To Do At Home",
-                description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-                img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-                _createdOn: 1615033373504,
-                _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e"
+            "book15": {
+                "_id": "15",
+                "title": "The Picture of Dorian Gray",
+                "author": "Oscar Wilde",
+                "description": "The story of Dorian Gray, a handsome young man whose portrait ages while he remains youthful, reflecting his inner corruption and decadence.",
+                "genre": "Philosophical Fiction, Gothic",
+                "pageCount": 254,
+                "coverImage": "https://m.media-amazon.com/images/I/71GdwPedEFL.jpg",
+                "likeCount": 1
             },
-            "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "4 Eady DIY Idea To Try!",
-                description: "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-                img: "./images/brightideacropped.jpg",
-                _createdOn: 1615033452480,
-                _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c"
+            "book16": {
+                "_id": "16",
+                "title": "Crime and Punishment",
+                "author": "Fyodor Dostoevsky",
+                "description": "A psychological novel about Raskolnikov, a young man who commits a murder and wrestles with guilt and the morality of his actions, exploring themes of redemption and justice.",
+                "genre": "Psychological Fiction, Philosophy",
+                "pageCount": 430,
+                "coverImage": "https://knigomania.bg/media/catalog/product/cache/84fd64f5684a1a3a4881cbc22d142c88/c/r/crime-and-punishment-9780451530066.jpg",
+                "likeCount": 0
             },
-            "b8608c22-dd57-4b24-948e-b358f536b958": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Dinner Recipe",
-                description: "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-                img: "./images/dinner.jpg",
-                _createdOn: 1615033491967,
-                _id: "b8608c22-dd57-4b24-948e-b358f536b958"
-            }
-        },
-        catalog: {
-            "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                make: "Table",
-                model: "Swedish",
-                year: 2015,
-                description: "Medium table",
-                price: 235,
-                img: "./images/table.png",
-                material: "Hardwood",
-                _createdOn: 1615545143015,
-                _id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
+            "book17": {
+                "_id": "17",
+                "title": "War and Peace",
+                "author": "Leo Tolstoy",
+                "description": "A sweeping epic about Russian aristocracy during the Napoleonic Wars, examining personal and political conflicts, and exploring love, war, and the human experience.",
+                "genre": "Historical Fiction, Epic",
+                "pageCount": 1225,
+                "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1686602284i/177106015.jpg",
+                "likeCount": 1
             },
-            "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                make: "Sofa",
-                model: "ES-549-M",
-                year: 2018,
-                description: "Three-person sofa, blue",
-                price: 1200,
-                img: "./images/sofa.jpg",
-                material: "Frame - steel, plastic; Upholstery - fabric",
-                _createdOn: 1615545572296,
-                _id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
+            "book18": {
+                "_id": "18",
+                "title": "The Priory of the Orange Tree",
+                "author": "Samantha Shannon",
+                "description": "A stunning epic fantasy set in a world where dragons and humans have coexisted for centuries. The story weaves together multiple viewpoints, including a dragon-riding queen, a dragon-riding mage, and an outsider with secrets that could shape the fate of the world.",
+                "genre": "Fantasy, Epic Fantasy",
+                "pageCount": 848,
+                "coverImage": "https://m.media-amazon.com/images/I/91ZQaXqO2nL._AC_UF1000,1000_QL80_.jpg",
+                "likeCount": 0
             },
-            "c7f51805-242b-45ed-ae3e-80b68605141b": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                make: "Chair",
-                model: "Bright Dining Collection",
-                year: 2017,
-                description: "Dining chair",
-                price: 180,
-                img: "./images/chair.jpg",
-                material: "Wood laminate; leather",
-                _createdOn: 1615546332126,
-                _id: "c7f51805-242b-45ed-ae3e-80b68605141b"
-            }
-        },
-        teams: {
-            "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Storm Troopers",
-                logoUrl: "/assets/atat.png",
-                description: "These ARE the droids we're looking for",
-                _createdOn: 1615737591748,
-                _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1"
+            "book19": {
+                "_id": "19",
+                "title": "The Goldfinch",
+                "author": "Donna Tartt",
+                "description": "A Pulitzer Prize-winning novel that follows the life of Theo Decker, who survives a bombing at the Metropolitan Museum of Art, and the tragic aftermath of losing his mother. The story explores themes of art, loss, and the complexity of life.",
+                "genre": "Literary Fiction, Contemporary",
+                "pageCount": 771,
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/e/eb/The_goldfinch_by_donna_tart.png",
+                "likeCount": 0
             },
-            "dc888b1a-400f-47f3-9619-07607966feb8": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Team Rocket",
-                logoUrl: "/assets/rocket.png",
-                description: "Gotta catch 'em all!",
-                _createdOn: 1615737655083,
-                _id: "dc888b1a-400f-47f3-9619-07607966feb8"
+            "book20": {
+                "_id": "20",
+                "title": "If We Were Villains",
+                "author": "M.L. Rio",
+                "description": "A dark, thrilling novel about a group of young actors at an elite conservatory who get caught up in a real-life tragedy that mirrors the Shakespeare plays they perform. It’s a story of obsession, betrayal, and murder.",
+                "genre": "Thriller, Mystery, Literary Fiction",
+                "pageCount": 368,
+                "coverImage": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/f/df34b42bf07fa955398bcd53dedd9d10/if-we-were-villains-30.jpg",
+                "likeCount": 0
             },
-            "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Minions",
-                logoUrl: "/assets/hydrant.png",
-                description: "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-                _createdOn: 1615737688036,
-                _id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
-            }
-        },
-        members: {
-            "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-                status: "member",
-                _createdOn: 1616236790262,
-                _updatedOn: 1616236792930
-            },
-            "61a19986-3b86-4347-8ca4-8c074ed87591": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237188183,
-                _updatedOn: 1616237189016
-            },
-            "8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-                status: "member",
-                _createdOn: 1616237193355,
-                _updatedOn: 1616237195145
-            },
-            "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237231299,
-                _updatedOn: 1616237235713
-            },
-            "280b4a1a-d0f3-4639-aa54-6d9158365152": {
-                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237257265,
-                _updatedOn: 1616237278248
-            },
-            "e797fa57-bf0a-4749-8028-72dba715e5f8": {
-                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-                status: "member",
-                _createdOn: 1616237272948,
-                _updatedOn: 1616237293676
+            "book21": {
+                "_id": "21",
+                "title": "Throne of Glass",
+                "author": "Sarah J. Maas",
+                "description": "The first book in a fantasy series about Celaena Sardothien, a teenage assassin who is offered a chance at freedom by competing in a deadly tournament. As she faces trials and intrigue, she uncovers dark secrets that will shape her future.",
+                "genre": "Fantasy, Young Adult",
+                "pageCount": 416,
+                "coverImage": "https://thedustyshop.co/cdn/shop/products/togsfh.jpg?v=1690067545&width=1445",
+                "likeCount": 0
             }
         }
     };

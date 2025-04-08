@@ -1,15 +1,10 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { isLoggedIn } from "../../api/auth";
 import "./Navbar.css";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContext";
 
 export default function Navbar() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
-
+  const { isAuthenticated} = useContext(AuthContext);
   return (
     <nav className="navbar">
       <img src="/assets/images/circle-logo.png" alt="Logo" />
@@ -24,13 +19,8 @@ export default function Navbar() {
             Catalog
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/users" className={({ isActive }) => (isActive ? "active" : "")}>
-            Users
-          </NavLink>
-        </li>
 
-        {!isLoggedIn() ? (
+        {!isAuthenticated ? (
           <>
             <li>
               <NavLink to="/register" className={({ isActive }) => (isActive ? "active" : "")}>

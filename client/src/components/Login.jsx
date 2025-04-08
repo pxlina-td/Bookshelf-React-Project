@@ -1,61 +1,46 @@
 import { useState } from 'react';
-import { loginUser } from '../api/users-api'; 
+import { useNavigate } from 'react-router-dom';
+import { useLogin } from '../hooks/useAuth';
+import { useForm } from '../hooks/useForm';
 
-const Login = () => {
-  const [formData, setFormData] = useState({ username: '', password: '' });
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [loading, setLoading] = useState(false);  // For handling loading state
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);  // Show loading indicator when submitting
-
-    try {
-      const userData = await loginUser(formData);
-      setSuccessMessage("Login successful!");
-      setLoading(false);
-      // Redirect or perform other actions after successful login
-    } catch (err) {
-      setError('Invalid username or password');
-      setLoading(false);
+export default function Login() {
+  const login = useLogin();
+  const navigate = useNavigate();
+  const {values, changeHandler, submitHandler} = useForm(
+    {email:'', password: ''},
+    async ({email,password})=>{
+      try {
+        await login(email, password);
+        navigate('/');
+      } catch(err){
+        console.log(err.message);
+      }
     }
-  };
+  );
 
   return (
     <div className="auth-container">
       <div className="auth-background"></div>
-      <h1>Login</h1>
-      {error && <p className="error-message">{error}</p>}
-      {successMessage && <p className="success-message">{successMessage}</p>}
-      <form onSubmit={handleSubmit} className="auth-form">
+      <h1>Log in</h1>
+      <form onSubmit={submitHandler} className="auth-form">
         <input
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          placeholder="Username"
+          type="email"
+          name="email"
+          value={values.email}
+          onChange={changeHandler}
+          placeholder="email@gmail.com"
           required
         />
         <input
           type="password"
           name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Password"
+          value={values.password}
+          onChange={changeHandler}
+          placeholder="password"
           required
         />
-        <button type="submit" className="auth-button" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
+        <button type="submit" className="auth-button">Log in</button>
       </form>
     </div>
   );
 };
-
-export default Login;

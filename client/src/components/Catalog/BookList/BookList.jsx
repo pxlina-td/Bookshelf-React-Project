@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './BookList.css';
-import { getAllBooks } from '../../../api/books-api'; // Import the books API
-import BookCard from './BookCard/BookCard'; // Your book card component
-import Pagination from '../../Pagination'; // Import the Pagination component
+import { getAllBooks } from '../../../api/books-api';
+import BookCard from './BookCard/BookCard';
+import Pagination from '../../Pagination';
+import { useNavigate } from 'react-router-dom'; // Import navigate hook
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -12,8 +12,8 @@ const BookList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const booksPerPage = 20; // Set how many books you want per page
-  const navigate = useNavigate();
+  const booksPerPage = 16;
+  const navigate = useNavigate(); // Set up navigate
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -21,14 +21,13 @@ const BookList = () => {
       setError('');
 
       try {
-        const data = await getAllBooks(); // Fetch books from your API
+        const data = await getAllBooks();
 
         if (data) {
-          const booksArray = Object.values(data); // Assuming API response is { book1: {...}, book2: {...} }
+          const booksArray = Object.values(data);
           const totalBooks = booksArray.length;
-          setTotalPages(Math.ceil(totalBooks / booksPerPage)); // Calculate total pages
+          setTotalPages(Math.ceil(totalBooks / booksPerPage));
 
-          // Paginate the books
           const startIndex = (currentPage - 1) * booksPerPage;
           const currentBooks = booksArray.slice(startIndex, startIndex + booksPerPage);
           setBooks(currentBooks);
@@ -44,30 +43,34 @@ const BookList = () => {
     };
 
     fetchBooks();
-  }, [currentPage]); // Fetch books again when the currentPage changes
+  }, [currentPage]);
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber); // Update the current page
+    setCurrentPage(pageNumber);
+  };
+
+  const handleBookClick = (book) => {
+    navigate(`/catalog/${book._id}`); // Navigate to the book details page
   };
 
   return (
     <div className="book-list-container">
-      {error && <div className="error">{error}</div>} {/* Display any error */}
+      {error && <div className="error">{error}</div>}
 
       {loading ? (
-        <div>Loading books...</div> // Show loading state
+        <div>Loading books...</div>
       ) : (
         <div className="book-list">
           {books.map((book) => (
-            <BookCard key={book._id} book={book} /> // Pass each book to BookCard
+            <BookCard key={book._id} book={book} onClick={handleBookClick} />
           ))}
         </div>
       )}
 
-      <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        onPageChange={handlePageChange} // Pass the page change handler to Pagination
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
       />
     </div>
   );
