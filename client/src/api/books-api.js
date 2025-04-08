@@ -17,3 +17,14 @@ export function getBookById(bookId) {
 export function createBook(bookData){
     return post(`${baseUrl}`, bookData);
 }
+
+// Add a book to user's shelf
+export const addToShelf = async (userId, bookId) => {
+    return await post(`/users/${userId}/shelf`, { bookId });
+  };
+  
+  // Remove a book from user's shelf
+  export const removeFromShelf = async (userId, bookId) => {
+    return await del(`/users/${userId}/shelf/${bookId}`);
+  };
+

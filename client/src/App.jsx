@@ -12,12 +12,19 @@ import BookDetails from "./components/Catalog/BookList/BookDetails/BookDetails";
 
 
 function App() {
-  const [authState, setAuthState] = useState({});
+  const [authState, setAuthState] = useState(() => {
+    const storedToken = localStorage.getItem('accessToken');
+    if (storedToken) {
+      // You could also decode the token to retrieve user info like email, etc.
+      return { accessToken: storedToken};  // Example, adjust according to your data
+    }
+    return {};
+  });
 
   const changeAuthState = (state) => {
+    localStorage.setItem('accessToken', state.accessToken);
     setAuthState(state);
   }
-
   const contextData = {
     userID: authState._id,
     email: authState.email,

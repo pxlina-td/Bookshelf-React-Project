@@ -1341,19 +1341,28 @@
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
                 email: "peter@abv.bg",
-                username: "Peter",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+                hashedPassword: "$2b$10$hG6QfHkHnl.z0qg9DdR2Z.IuRbKAW0/5v.dkj5d4pWzGy3wzFVXh6",
+                name: "Peter",
+                pfp: "https://example.com/peter.jpg",
+                bio: "A book lover",
+                shelf: []
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
                 email: "george@abv.bg",
-                username: "George",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+                hashedPassword: "$2b$10$HRe4ZTjxBhnjS9DxtvCuCWeuZnPZZ9N6VEO9Q4nBSY5Ed61y5l9wK",
+                name: "George",
+                pfp: "https://example.com/george.jpg",
+                bio: "Aspiring writer",
+                shelf: []
             },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
                 email: "admin@abv.bg",
-                username: "Admin",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
-            }
+                hashedPassword: "$2b$10$wZ7.zd16X0f5X0t5HcfMQrrlACnpnVrccpldTT29LZXcfCg8mm3hO",
+                name: "Admin",
+                pfp: "https://example.com/admin.jpg",
+                bio: "Administrator of the platform",
+                shelf: []
+            },
         },
         sessions: {
         }
@@ -1367,8 +1376,7 @@
                 "description": "A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a racially divided southern town. It explores themes of innocence, racism, and moral growth, set against the backdrop of the Depression-era South.",
                 "genre": "Fiction, Drama",
                 "pageCount": 281,
-                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVo4KYmcwAMzNQy2_Larrs0NfPGXuHEwkVQ&s",
-                "likeCount": 3
+                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVo4KYmcwAMzNQy2_Larrs0NfPGXuHEwkVQ&s"
             },
             "book2": {
                 "_id": "2",
@@ -1377,8 +1385,7 @@
                 "description": "Set in a totalitarian society controlled by the Party and its omnipresent leader Big Brother, 1984 explores themes of surveillance, censorship, and oppression, offering a chilling commentary on power and control.",
                 "genre": "Dystopian, Political Fiction",
                 "pageCount": 328,
-                "coverImage": "https://biblio.bg/files/pic_prod_1/thumbs/300x457/1/IMP_1984_35373_1.jpg",
-                "likeCount": 2
+                "coverImage": "https://biblio.bg/files/pic_prod_1/thumbs/300x457/1/IMP_1984_35373_1.jpg"
             },
             "book3": {
                 "_id": "3",
@@ -1387,8 +1394,7 @@
                 "description": "A classic romantic novel that delves into the complex relationships between Elizabeth Bennet and the wealthy but aloof Mr. Darcy, examining themes of love, social class, and individual growth in 19th-century England.",
                 "genre": "Romance, Classic",
                 "pageCount": 432,
-                "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg",
-                "likeCount": 2
+                "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg"
             },
             "book4": {
                 "_id": "4",
@@ -1397,8 +1403,7 @@
                 "description": "Set in the 1920s, this novel explores the American Dream, love, and wealth through the eyes of Nick Carraway, who narrates the story of the enigmatic Jay Gatsby's tragic obsession with Daisy Buchanan.",
                 "genre": "Classic, Tragedy",
                 "pageCount": 180,
-                "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1738790966i/4671.jpg",
-                "likeCount": 3
+                "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1738790966i/4671.jpg"
             },
             "book5": {
                 "_id": "5",
@@ -1407,8 +1412,7 @@
                 "description": "The tale of Captain Ahab's obsessive quest to kill the white whale Moby-Dick, this novel explores themes of vengeance, the limits of knowledge, and man's struggle against the forces of nature.",
                 "genre": "Adventure, Classic, Philosophy",
                 "pageCount": 635,
-                "coverImage": "https://m.media-amazon.com/images/I/91xNmlf86yL.jpg",
-                "likeCount": 2
+                "coverImage": "https://m.media-amazon.com/images/I/91xNmlf86yL.jpg"
             },
             "book6": {
                 "_id": "6",
@@ -1417,8 +1421,7 @@
                 "description": "The story of Holden Caulfield, a disillusioned teenager who struggles to find his place in the adult world, exploring themes of alienation, innocence, and the complexities of adolescence.",
                 "genre": "Fiction, Coming-of-Age",
                 "pageCount": 277,
-                "coverImage": "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg",
-                "likeCount": 2
+                "coverImage": "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg"
             },
             "book7": {
                 "_id": "7",
@@ -1427,8 +1430,7 @@
                 "description": "In a futuristic world where technology controls every aspect of life, from reproduction to emotions, the novel critiques the loss of individuality and freedom in a society obsessed with pleasure and consumerism.",
                 "genre": "Dystopian, Science Fiction",
                 "pageCount": 311,
-                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtkrn8iXfitBLLBWvLt7VnijFVeKpHknkxw&s",
-                "likeCount": 1
+                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtkrn8iXfitBLLBWvLt7VnijFVeKpHknkxw&s"
             },
             "book8": {
                 "_id": "8",
@@ -1437,8 +1439,7 @@
                 "description": "The journey of Bilbo Baggins, a humble hobbit who unexpectedly joins a group of dwarves on a quest to reclaim their homeland from the dragon Smaug, filled with adventure, treasure, and mythical creatures.",
                 "genre": "Fantasy, Adventure",
                 "pageCount": 310,
-                "coverImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg",
-                "likeCount": 2
+                "coverImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg"
             },
             "book9": {
                 "_id": "9",
@@ -1447,8 +1448,7 @@
                 "description": "A young boy named Harry Potter discovers he is a wizard and embarks on a magical journey at Hogwarts School of Witchcraft and Wizardry, uncovering secrets about his past, friendship, and destiny.",
                 "genre": "Fantasy, Adventure",
                 "pageCount": 309,
-                "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
-                "likeCount": 4
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg"
             },
             "book10": {
                 "_id": "10",
@@ -1457,8 +1457,7 @@
                 "description": "The Road runs from the unimaginable past to the far future, and those who travel it have access to the turnoffs leading to all times and places--even to the alternate time-streams of histories that never happened. Why the Dragons of Bel'kwinith made the Road--or who they are--no one knows. But the Road has always been there and for those who know how to find it, it always will be!",
                 "genre": "Fantasy, Science Fiction",
                 "pageCount": 185,
-                "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/1f/Roadmarks_first.jpg",
-                "likeCount": 1
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/1f/Roadmarks_first.jpg"
             },
             "book11": {
                 "_id": "11",
@@ -1467,8 +1466,7 @@
                 "description": "A passionate and tragic tale of love and revenge between Heathcliff and Catherine Earnshaw, whose tumultuous relationship causes pain and destruction for everyone around them on the Yorkshire moors.",
                 "genre": "Gothic Fiction, Romance",
                 "pageCount": 416,
-                "coverImage": "https://images.squarespace-cdn.com/content/v1/5d40204073334a0001f2f066/1602439836717-GUAAN9EXNKDOGD9SKKZM/3674767a84174c9df69d8706e755e37a.jpg",
-                "likeCount": 2
+                "coverImage": "https://images.squarespace-cdn.com/content/v1/5d40204073334a0001f2f066/1602439836717-GUAAN9EXNKDOGD9SKKZM/3674767a84174c9df69d8706e755e37a.jpg"
             },
             "book12": {
                 "_id": "12",
@@ -1477,8 +1475,7 @@
                 "description": "The story of Victor Frankenstein, a young scientist who creates a monstrous creature that becomes an outcast. The novel explores themes of ambition, isolation, and the consequences of unchecked scientific experimentation.",
                 "genre": "Horror",
                 "pageCount": 280,
-                "coverImage": "https://m.media-amazon.com/images/I/81TVqiv-ctL._AC_UF1000,1000_QL80_.jpg",
-                "likeCount": 2
+                "coverImage": "https://m.media-amazon.com/images/I/81TVqiv-ctL._AC_UF1000,1000_QL80_.jpg"
             },
             "book13": {
                 "_id": "13",
@@ -1487,8 +1484,7 @@
                 "description": "An epic poem that tells the story of Odysseus' ten-year journey home after the Trojan War, filled with encounters with gods, monsters, and temptations.",
                 "genre": "Poetry",
                 "pageCount": 380,
-                "coverImage": "https://mpd-biblio-covers.imgix.net/9780312869014.jpg",
-                "likeCount": 2
+                "coverImage": "https://mpd-biblio-covers.imgix.net/9780312869014.jpg"
             },
             "book14": {
                 "_id": "14",
@@ -1497,8 +1493,7 @@
                 "description": "The first volume in the epic saga where Frodo Baggins and his companions set out to destroy the One Ring to prevent Sauron from ruling Middle-earth.",
                 "genre": "Fantasy, Adventure",
                 "pageCount": 423,
-                "coverImage": "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif",
-                "likeCount": 1
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif"
             },
             "book15": {
                 "_id": "15",
@@ -1507,8 +1502,7 @@
                 "description": "The story of Dorian Gray, a handsome young man whose portrait ages while he remains youthful, reflecting his inner corruption and decadence.",
                 "genre": "Philosophical Fiction, Gothic",
                 "pageCount": 254,
-                "coverImage": "https://m.media-amazon.com/images/I/71GdwPedEFL.jpg",
-                "likeCount": 1
+                "coverImage": "https://m.media-amazon.com/images/I/71GdwPedEFL.jpg"
             },
             "book16": {
                 "_id": "16",
@@ -1517,8 +1511,7 @@
                 "description": "A psychological novel about Raskolnikov, a young man who commits a murder and wrestles with guilt and the morality of his actions, exploring themes of redemption and justice.",
                 "genre": "Psychological Fiction, Philosophy",
                 "pageCount": 430,
-                "coverImage": "https://knigomania.bg/media/catalog/product/cache/84fd64f5684a1a3a4881cbc22d142c88/c/r/crime-and-punishment-9780451530066.jpg",
-                "likeCount": 0
+                "coverImage": "https://knigomania.bg/media/catalog/product/cache/84fd64f5684a1a3a4881cbc22d142c88/c/r/crime-and-punishment-9780451530066.jpg"
             },
             "book17": {
                 "_id": "17",
@@ -1527,8 +1520,7 @@
                 "description": "A sweeping epic about Russian aristocracy during the Napoleonic Wars, examining personal and political conflicts, and exploring love, war, and the human experience.",
                 "genre": "Historical Fiction, Epic",
                 "pageCount": 1225,
-                "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1686602284i/177106015.jpg",
-                "likeCount": 1
+                "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1686602284i/177106015.jpg"
             },
             "book18": {
                 "_id": "18",
@@ -1537,8 +1529,7 @@
                 "description": "A stunning epic fantasy set in a world where dragons and humans have coexisted for centuries. The story weaves together multiple viewpoints, including a dragon-riding queen, a dragon-riding mage, and an outsider with secrets that could shape the fate of the world.",
                 "genre": "Fantasy, Epic Fantasy",
                 "pageCount": 848,
-                "coverImage": "https://m.media-amazon.com/images/I/91ZQaXqO2nL._AC_UF1000,1000_QL80_.jpg",
-                "likeCount": 0
+                "coverImage": "https://m.media-amazon.com/images/I/91ZQaXqO2nL._AC_UF1000,1000_QL80_.jpg"
             },
             "book19": {
                 "_id": "19",
@@ -1547,8 +1538,7 @@
                 "description": "A Pulitzer Prize-winning novel that follows the life of Theo Decker, who survives a bombing at the Metropolitan Museum of Art, and the tragic aftermath of losing his mother. The story explores themes of art, loss, and the complexity of life.",
                 "genre": "Literary Fiction, Contemporary",
                 "pageCount": 771,
-                "coverImage": "https://upload.wikimedia.org/wikipedia/en/e/eb/The_goldfinch_by_donna_tart.png",
-                "likeCount": 0
+                "coverImage": "https://upload.wikimedia.org/wikipedia/en/e/eb/The_goldfinch_by_donna_tart.png"
             },
             "book20": {
                 "_id": "20",
@@ -1557,8 +1547,7 @@
                 "description": "A dark, thrilling novel about a group of young actors at an elite conservatory who get caught up in a real-life tragedy that mirrors the Shakespeare plays they perform. It’s a story of obsession, betrayal, and murder.",
                 "genre": "Thriller, Mystery, Literary Fiction",
                 "pageCount": 368,
-                "coverImage": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/f/df34b42bf07fa955398bcd53dedd9d10/if-we-were-villains-30.jpg",
-                "likeCount": 0
+                "coverImage": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/f/df34b42bf07fa955398bcd53dedd9d10/if-we-were-villains-30.jpg"
             },
             "book21": {
                 "_id": "21",
@@ -1567,8 +1556,18 @@
                 "description": "The first book in a fantasy series about Celaena Sardothien, a teenage assassin who is offered a chance at freedom by competing in a deadly tournament. As she faces trials and intrigue, she uncovers dark secrets that will shape her future.",
                 "genre": "Fantasy, Young Adult",
                 "pageCount": 416,
-                "coverImage": "https://thedustyshop.co/cdn/shop/products/togsfh.jpg?v=1690067545&width=1445",
-                "likeCount": 0
+                "coverImage": "https://thedustyshop.co/cdn/shop/products/togsfh.jpg?v=1690067545&width=1445"
+            }, 
+            "34a42455-6438-4d39-906e-21437168975f":{
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "A Day of Fallen Night",
+                "author": "Samantha Shanon",
+                "description": "Tunuva Melim is a sister of the Priory. For fifty years, she has trained to slay wyrms – but none have appeared since the Nameless One, and the younger generation is starting to question the Priory's purpose.\n\nTo the north, in the Queendom of Inys, Sabran the Ambitious has married the new King of Hróth, narrowly saving both realms from ruin. Their daughter, Glorian, trails in their shadow – exactly where she wants to be.\n\nThe dragons of the East have slept for centuries. Dumai has spent her life in a Seiikinese mountain temple, trying to wake the gods from their long slumber. Now someone from her mother's past is coming to upend her fate.\n\nWhen the Dreadmount erupts, bringing with it an age of terror and violence, these women must find the strength to protect humankind from a devastating threat.",
+                "genre": "Fantasy, Fiction",
+                "pageCount": "868",
+                "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAG4XZDZ0_LdCpq_c_F-zHf5CINMgiLX-QMQ&s",
+                "_createdOn": 1744120578607,
+                "_id": "34a42455-6438-4d39-906e-21437168975f"
             }
         }
     };

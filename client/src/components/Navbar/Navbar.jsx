@@ -36,12 +36,12 @@ export default function Navbar() {
         ) : (
           <>
             <li>
-              <NavLink to="/profile" className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/profile/:id" className={({ isActive }) => (isActive ? "active" : "")}>
                 Profile
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" onClick={handleLogout}>Log out</NavLink>
+              <NavLink to="/" >Log out</NavLink>
             </li>
           </>
         )}

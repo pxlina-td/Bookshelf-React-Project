@@ -16,7 +16,7 @@ const initialValues = {
 export default function CreateBook({ onClose }) {
     const createBook = useCreateBook();
     const navigate = useNavigate();
-    const [error, setError] = useState(null); // 🧠 New state for errors
+    const [error, setError] = useState(null); 
 
     const createHandler = async (values) => {
         try {

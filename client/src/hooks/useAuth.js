@@ -8,7 +8,7 @@ export const useLogin = () => {
     const loginHandler = async (email, password) => {
             const { password: _, ...authData } = await login(email, password);
             changeAuthState(authData);
-            return result;
+            return authData;
     }
 
     return loginHandler;
@@ -18,9 +18,10 @@ export const useRegister = () => {
     const { changeAuthState } = useContext(AuthContext);
 
     const registerHandler = async (email, password, name, profilepic, bio) => {
-        const { password: _, ...authData } = await register(email, password, name, profilepic, bio);
+        const userData = { email, password, name, profilepic, bio }; // Wrap fields in an object
+        const { password: _, ...authData } = await register(userData); 
         changeAuthState(authData);
-        return result;
+        return authData;
     }
 
     return registerHandler;
