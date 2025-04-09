@@ -3,11 +3,12 @@ async function requester(method, url, data) {
 
     const accessToken = localStorage.getItem('accessToken');
 
-    if(accessToken){
+    // Include the token only for methods that require authorization
+    if (accessToken && (method !== 'GET' || url.includes('/users/me'))) {
         options.headers = {
             ...options.headers,
             'X-Authorization': accessToken,
-        }
+        };
     }
 
     if (method !== 'GET') {
@@ -23,9 +24,9 @@ async function requester(method, url, data) {
     }
 
     const response = await fetch(url, options);
-    const result =  await response.json();
+    const result = await response.json();
     
-    if(!response.ok){
+    if (!response.ok) {
         console.error("Error Response: ", result);
         throw result;
     }

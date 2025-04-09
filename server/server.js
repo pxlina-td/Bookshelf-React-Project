@@ -1121,10 +1121,10 @@
                 } else {
                     const newUser = Object.assign({}, body, {
                         [identity]: body[identity],
-                        hashedPassword: hash(body.password)
+                        password: body.password
                     });
                     const result = context.protectedStorage.add('users', newUser);
-                    delete result.hashedPassword;
+                    delete result.password;
 
                     const session = saveSession(result._id);
                     result.accessToken = session.accessToken;
@@ -1136,9 +1136,9 @@
             function login(body) {
                 const targetUser = context.protectedStorage.query('users', { [identity]: body[identity] });
                 if (targetUser.length == 1) {
-                    if (hash(body.password) === targetUser[0].hashedPassword) {
+                    if (body.password === targetUser[0].password) {
                         const result = targetUser[0];
-                        delete result.hashedPassword;
+                        delete result.password;
 
                         const session = saveSession(result._id);
                         result.accessToken = session.accessToken;
@@ -1341,28 +1341,36 @@
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
                 email: "peter@abv.bg",
-                hashedPassword: "$2b$10$hG6QfHkHnl.z0qg9DdR2Z.IuRbKAW0/5v.dkj5d4pWzGy3wzFVXh6",
+                password: "peter123",
                 name: "Peter",
-                pfp: "https://example.com/peter.jpg",
+                profilepic: "https://images.prismic.io/smi-blog/6c987520-81a6-4d03-acc3-2281bbb8b323_IMG_4795.jpg?auto=compress,format",
                 bio: "A book lover",
                 shelf: []
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
                 email: "george@abv.bg",
-                hashedPassword: "$2b$10$HRe4ZTjxBhnjS9DxtvCuCWeuZnPZZ9N6VEO9Q4nBSY5Ed61y5l9wK",
+                password: "george123",
                 name: "George",
-                pfp: "https://example.com/george.jpg",
+                profilepic: "https://example.com/george.jpg",
                 bio: "Aspiring writer",
                 shelf: []
             },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
                 email: "admin@abv.bg",
-                hashedPassword: "$2b$10$wZ7.zd16X0f5X0t5HcfMQrrlACnpnVrccpldTT29LZXcfCg8mm3hO",
+                password: "admin123",
                 name: "Admin",
-                pfp: "https://example.com/admin.jpg",
+                profilepic: "https://preview.redd.it/3fc3wd5xwf171.png?auto=webp&s=efea2e1ae32067ea07fc547585f64a95171c7902",
                 bio: "Administrator of the platform",
                 shelf: []
             },
+            "ddd6329f-3cdd-4072-87b2-af9dbbe15033":{
+                email:"ivs@gmail.com",
+                password:"123123123",
+                name:"Ivaila",
+                profilepic:"https://images.prismic.io/smi-blog/6c987520-81a6-4d03-acc3-2281bbb8b323_IMG_4795.jpg?auto=compress,format",
+                bio:"I love classics and fantasy novels",
+                shelf:[]
+            }
         },
         sessions: {
         }
@@ -1442,6 +1450,7 @@
                 "coverImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg"
             },
             "book9": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "9",
                 "title": "Harry Potter and the Sorcerer's Stone",
                 "author": "J.K. Rowling",
@@ -1451,6 +1460,7 @@
                 "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg"
             },
             "book10": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "10",
                 "title": "Roadmarks",
                 "author": "Roger Zelazny",
@@ -1469,6 +1479,7 @@
                 "coverImage": "https://images.squarespace-cdn.com/content/v1/5d40204073334a0001f2f066/1602439836717-GUAAN9EXNKDOGD9SKKZM/3674767a84174c9df69d8706e755e37a.jpg"
             },
             "book12": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "12",
                 "title": "Frankenstein",
                 "author": "Mary Shelley",

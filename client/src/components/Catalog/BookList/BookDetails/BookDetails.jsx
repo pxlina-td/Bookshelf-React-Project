@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './BookDetails.css';
-import { getBookById } from '../../../../api/books-api';
-import { useParams } from 'react-router-dom';
+import { deleteBook, getBookById } from '../../../../api/books-api';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/authContext';
 
 const BookDetails = () => {
   const [book, setBook] = useState({});
   const { bookId } = useParams();
-  const { isAuthenticated } = useContext(AuthContext);
+  const { userId, isAuthenticated } = useContext(AuthContext);
 
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -18,11 +18,16 @@ const BookDetails = () => {
     })();
   }, [bookId]);
 
-  const deleteBookHandler = () => {
-    console.log(`Delete ${book._id}`);
-    // You can trigger the delete modal or API call here
+  const deleteBookHandler = async() => {
+    try{
+     await deleteBook(bookId);
+     navigate('/catalog');
+    } catch(err){
+      console.log(err.message);
+    }
   };
 
+  const isOwner = userId !== book._ownerId;
 
   return (
     <div className="book-details-page">
@@ -38,7 +43,7 @@ const BookDetails = () => {
 
           <p className="book-details-description">{book.description}</p>
 
-          {isAuthenticated && (
+          {isAuthenticated && isOwner && (
            <div className="book-details-actions">
             <button className="edit-button" onClick={() => console.log(`Edit ${book._id}`)}>Edit</button>
             <button className="delete-button" onClick={deleteBookHandler}>Delete</button>

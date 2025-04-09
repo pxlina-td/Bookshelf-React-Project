@@ -18,6 +18,8 @@ export function createBook(bookData){
     return post(`${baseUrl}`, bookData);
 }
 
+export const deleteBook = (bookId) => del(`${baseUrl}/${bookId}`);
+
 // Add a book to user's shelf
 export const addToShelf = async (userId, bookId) => {
     return await post(`/users/${userId}/shelf`, { bookId });

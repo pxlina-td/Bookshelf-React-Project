@@ -83,14 +83,16 @@ const Register = () => {
           name="profilepic"
           value={values.profilepic}
           onChange={changeHandler}
-          placeholder="Profile Picture URL (optional)"
+          placeholder="Profile Picture URL"
+          required
         />
         <textarea
           name="bio"
 					id="bio"
           value={values.bio}
           onChange={changeHandler}
-          placeholder="Bio (optional)"
+          placeholder="Bio"
+          required
         />
 				{error && (
 					<p className='error-message'>
