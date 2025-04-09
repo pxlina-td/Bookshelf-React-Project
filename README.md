@@ -31,23 +31,6 @@ This part of the application is accessible to non-registered users. These users 
 - **Profile Page** -> Users can view their profile, including their bookshelf.
 - **Create/Edit/Delete Books** -> Users can add new books to the catalog, edit their details, and delete books they've added.
 
-## Users on the Server
-
-The following users are pre-configured on the server:
-
-- **Peter** (email: peter@abv.bg)
-  - **Password**: peter123
-
-  
-- **George** (email: george@abv.bg)
-  - **Password**: george123
-
-  
-- **Admin** (email: admin@abv.bg)
-  - **Password**: admin123
-
-
-These users are initialized on the server and have access to the platform as described above.
 
 ## Technical Details
 

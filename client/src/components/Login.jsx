@@ -4,15 +4,18 @@ import { useLogin } from '../hooks/useAuth';
 import { useForm } from '../hooks/useForm';
 
 export default function Login() {
+  const [error, setError] = useState('');
   const login = useLogin();
   const navigate = useNavigate();
-  const {values, changeHandler, submitHandler} = useForm(
-    {email:'', password: ''},
-    async ({email,password})=>{
+
+  const { values, changeHandler, submitHandler } = useForm(
+    { email: '', password: '' },
+    async ({ email, password }) => {
       try {
         await login(email, password);
         navigate('/');
-      } catch(err){
+      } catch (err) {
+        setError(err.message || 'Login failed.');
         console.log(err.message);
       }
     }
@@ -39,8 +42,13 @@ export default function Login() {
           placeholder="password"
           required
         />
+        {error && (
+          <p className="error-message">
+            <span>{error}</span>
+          </p>
+        )}
         <button type="submit" className="auth-button">Log in</button>
       </form>
     </div>
   );
-};
+}

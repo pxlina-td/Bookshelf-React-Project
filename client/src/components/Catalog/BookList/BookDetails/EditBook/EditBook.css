@@ -2,56 +2,60 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.65);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    padding: 3rem 1rem; /* Increased padding to give more space */
+    box-sizing: border-box;
   }
   
   .modal {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 400px; /* Reduced max-width to make the modal smaller */
+    width: 100%;
+    max-height: 90vh; /* Limit the height to prevent stretching too large */
+    padding: 1.2rem; /* Adjusted padding inside the modal */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    font-size: 0.85rem;
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
   
   .modal h2 {
-    margin-top: 0;
-    color: #333;
+    font-size: 1.25rem;
     text-align: center;
+    margin-bottom: 1.2rem;
   }
   
   .modal form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
   }
   
   .modal label {
     display: flex;
     flex-direction: column;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #444;
+    font-weight: 500;
   }
   
   .modal input,
   .modal textarea {
+    font-size: 0.85rem;
     padding: 0.5rem;
+    margin-top: 0.3rem;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font-size: 0.95rem;
-    margin-top: 0.25rem;
   }
   
   .modal textarea {
+    min-height: 60px;
     resize: vertical;
-    min-height: 80px;
   }
   
   .modal-buttons {
@@ -60,36 +64,26 @@
     margin-top: 1rem;
   }
   
-  .modal button {
-    padding: 0.6rem 1.2rem;
-    font-weight: 600;
+  .modal-buttons button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background-color 0.2s ease;
   }
   
-  .modal button[type="submit"] {
-    background-color: #007bff;
+  .modal-buttons button[type="submit"] {
+    background-color: #4caf50;
     color: white;
   }
   
-  .modal .cancel-button {
-    background-color: #ccc;
-    color: #333;
+  .modal-buttons .cancel-button {
+    background-color: #f44336;
+    color: white;
   }
   
-  .modal button:hover {
+  .modal-buttons button:hover {
     opacity: 0.9;
-  }
-  
-  .error-message {
-    background-color: #ffe0e0;
-    color: #b30000;
-    padding: 0.5rem 1rem;
-    border: 1px solid #ff4d4d;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
   }
   

@@ -11,7 +11,7 @@ export function useGetOneBook(bookId){
         })();
     }, [bookId]);
 
-    return [book, setBook];
+    return { book, setBook }; // Return an object here instead of an array
 }
 
 export function useCreateBook(){
@@ -20,6 +20,6 @@ export function useCreateBook(){
 }
 
 export function useDeleteBook(){
-    
+
 }
 

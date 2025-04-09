@@ -10,7 +10,8 @@ const initialValues = {
   password: '',
   repassword: '',
   profilepic: '',
-  bio: ''
+  bio: '',
+  shelf:[]
 };
 
 const Register = () => {
@@ -19,7 +20,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const registerHandler = async(values) => {
-		const { email, password, repassword, name, profilepic, bio } = values;
+		const { email, password, repassword, name, profilepic, bio, shelf } = values;
 		if(password !== repassword){
 			setError('Passwords do not match!');
 			return;
