@@ -28,28 +28,84 @@ export function createBook(bookData) {
 export const deleteBook = (bookId) => del(`${baseUrl}/${bookId}`);
 
 export const update = (bookId, bookData) => put(`${baseUrl}/${bookId}`, bookData);
+// Add book to user's shelf (as an array)
+async function addToShelf(userId, bookId, token) {
+    const userResponse = await fetch(`/data/users/${userId}`, {
+        method: 'GET',
+        headers: {
+            'X-Authorization': token
+        }
+    });
 
-export const addToShelf = async (userId, bookId) => {
-    try {
-        const userData = await get(`${authUrl}/${userId}`);
-        const currentShelf = userData.shelf || [];
-        const updatedShelf = [...currentShelf, { bookId }];
-        return await patch(`${authUrl}/${userId}`, { shelf: updatedShelf });
-    } catch (err) {
-        console.error('Failed to add to shelf:', err);
-        throw new Error('Failed to add book to shelf');
+    if (!userResponse.ok) {
+        console.error('Failed to fetch user data');
+        return;
     }
-};
 
+    const user = await userResponse.json();
+    // Add the new book ID to the shelf array if it's not already there
+    if (!user.shelf.includes(bookId)) {
+        user.shelf.push(bookId);
 
-// Remove bookId from shelf array
-export const removeFromShelf = async (userId, bookId) => {
-    try {
-        const userData = await get(`${authUrl}/${userId}`);
-        const updatedShelf = (userData.shelf || []).filter(item => item.bookId !== bookId);
-        return await patch(`${authUrl}/${userId}`, { shelf: updatedShelf });
-    } catch (err) {
-        console.error('Failed to remove from shelf:', err);
-        throw new Error('Failed to remove book from shelf');
+        // Update the user's shelf (PUT request)
+        const updateResponse = await fetch(`/data/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Authorization': token
+            },
+            body: JSON.stringify({
+                shelf: user.shelf // Update the shelf with the new book
+            })
+        });
+
+        if (updateResponse.ok) {
+            const updatedUser = await updateResponse.json();
+            console.log('Book added to shelf:', updatedUser);
+            return updatedUser;
+        } else {
+            console.error('Failed to update user data');
+        }
+    } else {
+        console.log('Book is already on the shelf');
     }
-};
+}
+
+// Remove book from user's shelf (as an array)
+async function removeFromShelf(userId, bookId, token) {
+    const userResponse = await fetch(`/data/users/${userId}`, {
+        method: 'GET',
+        headers: {
+            'X-Authorization': token
+        }
+    });
+
+    if (!userResponse.ok) {
+        console.error('Failed to fetch user data');
+        return;
+    }
+
+    const user = await userResponse.json();
+    // Remove the book ID from the shelf array
+    user.shelf = user.shelf.filter(id => id !== bookId);
+
+    // Update the user's shelf (PUT request)
+    const updateResponse = await fetch(`/data/users/${userId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({
+            shelf: user.shelf // Update the shelf without the removed book
+        })
+    });
+
+    if (updateResponse.ok) {
+        const updatedUser = await updateResponse.json();
+        console.log('Book removed from shelf:', updatedUser);
+        return updatedUser;
+    } else {
+        console.error('Failed to update user data');
+    }
+}

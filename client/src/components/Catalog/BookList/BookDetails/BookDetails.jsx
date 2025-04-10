@@ -61,6 +61,12 @@ const BookDetails = () => {
         await addToShelf(userId, bookId);
       }
       setInShelf(!inShelf);
+
+      // After adding/removing the book, you can refresh the user data
+      const updatedUserData = await getMe();
+      setUserId(updatedUserData._id);  // Ensure userId is refreshed
+      const alreadyInShelf = updatedUserData.shelf?.some(item => item.bookId === bookId);
+      setInShelf(alreadyInShelf);  // Update inShelf based on the new shelf state
     } catch (err) {
       console.log(err.message);
     }
@@ -94,8 +100,8 @@ const BookDetails = () => {
           {/* Show Add/Remove to Shelf button if the user is authenticated */}
           {userId && (
             <div className="book-details-actions">
-              <button className="toggle-shelf-button" onClick={toggleShelfHandler}>
-                {inShelf ? 'Remove from Shelf' : 'Add to Shelf'}
+              <button className={`toggle-shelf-button ${inShelf ? 'remove' : 'add'}`} onClick={toggleShelfHandler}>
+                {inShelf ? '- Remove from Shelf' : '+ Add to Shelf'}
               </button>
             </div>
           )}

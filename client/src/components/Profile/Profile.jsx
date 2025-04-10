@@ -46,7 +46,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      
+
       <div className="profile-image-container">
         <img
           src={user.profilepic || '/assets/images/default-avatar.jpg'} // Fallback to a default avatar if missing
@@ -66,10 +66,13 @@ const Profile = () => {
         </p>
         <div className="profile-shelf">
           <strong>Shelf:</strong>
-          {user.shelf?.length > 0 ? ( // Use optional chaining to prevent errors if shelf is undefined
+          {user.shelf?.length > 0 ? (
             <ul>
               {user.shelf.map((book, index) => (
-                <li key={index}>{book}</li> // Assuming book titles are stored here
+                <li key={index}>
+                  <img src={book.coverImage} alt={book.title} className="profile-shelf-book-cover" />
+                  <p>{book.title} by {book.author}</p>
+                </li>
               ))}
             </ul>
           ) : (
