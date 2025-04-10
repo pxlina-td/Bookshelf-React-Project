@@ -29,7 +29,7 @@ export const deleteBook = (bookId) => del(`${baseUrl}/${bookId}`);
 
 export const update = (bookId, bookData) => put(`${baseUrl}/${bookId}`, bookData);
 // Add book to user's shelf (as an array)
-async function addToShelf(userId, bookId, token) {
+export async function addToShelf(userId, bookId, token) {
     const userResponse = await fetch(`/data/users/${userId}`, {
         method: 'GET',
         headers: {
@@ -72,7 +72,7 @@ async function addToShelf(userId, bookId, token) {
 }
 
 // Remove book from user's shelf (as an array)
-async function removeFromShelf(userId, bookId, token) {
+export async function removeFromShelf(userId, bookId, token) {
     const userResponse = await fetch(`/data/users/${userId}`, {
         method: 'GET',
         headers: {
