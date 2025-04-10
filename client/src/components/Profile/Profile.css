@@ -57,6 +57,21 @@
 .profile-shelf li {
   font-size: 1.1rem;
   color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-shelf-book-cover {
+  width: 100px; /* Set the width for all images */
+  height: 150px; /* Set the height for all images */
+  object-fit: cover; /* Ensure the image covers the space without stretching */
+  margin-right: 10px;
+}
+
+.profile-shelf a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Make sure the text color is inherited */
 }
 
 .profile-shelf strong {

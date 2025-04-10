@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './BookDetails.css';
 import EditBook from './EditBook/EditBook';
 import { deleteBook, getBookById } from '../../../../api/books-api';
-import { addToShelf, removeFromShelf } from '../../../../api/books-api';
-import { getMe } from '../../../../api/auth-api';
+import { getMe, updateUser } from '../../../../api/auth-api';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const BookDetails = () => {
@@ -11,6 +10,7 @@ const BookDetails = () => {
   const [inShelf, setInShelf] = useState(false);
   const [userId, setUserId] = useState(null);  // State to hold the userId
   const { bookId } = useParams();
+  console.log('Book ID:', bookId);
   const [showEditModal, setShowEditModal] = useState(false);
   const navigate = useNavigate();
 
@@ -55,20 +55,25 @@ const BookDetails = () => {
 
   const toggleShelfHandler = async () => {
     try {
+      const userData = await getMe(); // Always get fresh data
+  
+      let updatedShelf;
+  
       if (inShelf) {
-        await removeFromShelf(userId, bookId);
+        // Remove the book object
+        updatedShelf = userData.shelf.filter(item => item.bookId !== bookId);
       } else {
-        await addToShelf(userId, bookId);
+        // Add the book as an object
+        updatedShelf = [...(userData.shelf || []), { bookId }];
       }
-      setInShelf(!inShelf);
-
-      // After adding/removing the book, you can refresh the user data
-      const updatedUserData = await getMe();
-      setUserId(updatedUserData._id);  // Ensure userId is refreshed
-      const alreadyInShelf = updatedUserData.shelf?.some(item => item.bookId === bookId);
-      setInShelf(alreadyInShelf);  // Update inShelf based on the new shelf state
+  
+      const updatedUser = await updateUser({ shelf: updatedShelf });
+  
+      // Use same object-based comparison
+      const alreadyInShelf = updatedUser.shelf?.some(item => item.bookId === bookId);
+      setInShelf(alreadyInShelf);
     } catch (err) {
-      console.log(err.message);
+      console.log('Error updating shelf:', err.message);
     }
   };
 

@@ -85,7 +85,8 @@
 
             let status = 200;
             let headers = {
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'http://localhost:5173',
+                'Access-Control-Allow-Credentials': 'true',
                 'Content-Type': 'application/json'
             };
             let result = '';
@@ -95,7 +96,7 @@
             if (method == 'OPTIONS') {
                 Object.assign(headers, {
                     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-                    'Access-Control-Allow-Credentials': false,
+                    'Access-Control-Allow-Credentials': true,
                     'Access-Control-Max-Age': '86400',
                     'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, X-Authorization, X-Admin'
                 });
@@ -440,6 +441,7 @@
     userService.post('register', onRegister);
     userService.post('login', onLogin);
     userService.get('logout', onLogout);
+    userService.patch('me', onUpdateSelf);
 
 
     function getSelf(context, tokens, query, body) {
@@ -450,6 +452,34 @@
         } else {
             throw new AuthorizationError$1();
         }
+    }
+
+    function onUpdateSelf(context, tokens, query, body) {
+        if (!context.user) {
+            throw new AuthorizationError$1();
+        }
+    
+        const userId = context.user._id;
+        const existingUser = context.protectedStorage.get('users', userId);
+    
+        // Only allow specific fields to be updated
+        const allowedFields = ['shelf', 'bio', 'profilePicture'];
+        const updates = {};
+    
+        for (const key of allowedFields) {
+            if (body.hasOwnProperty(key)) {
+                updates[key] = body[key];
+            }
+        }
+    
+        if (Object.keys(updates).length === 0) {
+            throw new RequestError$1('No valid fields to update');
+        }
+    
+        const updatedUser = context.protectedStorage.merge('users', userId, updates);
+        delete updatedUser.hashedPassword;
+    
+        return updatedUser;
     }
 
     function onRegister(context, tokens, query, body) {

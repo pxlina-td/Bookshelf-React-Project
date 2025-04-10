@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getMe } from '../../api/auth-api';
+import { getBookById } from '../../api/books-api';
 import './Profile.css';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
+  const [shelfBooks, setShelfBooks] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -18,10 +20,17 @@ const Profile = () => {
       }
 
       try {
-        const userData = await getMe(); // Directly get the parsed data
+        const userData = await getMe();
+        if (userData) {
+          setUser(userData);
 
-        if (userData) { // Check if user data is received
-          setUser(userData); // Store user data in the state
+          // Fetch all books on the user's shelf
+          const shelf = userData.shelf || [];
+          const bookPromises = shelf.map(item => getBookById(item.bookId));
+          const books = await Promise.all(bookPromises);
+          setShelfBooks(books);
+
+          console.log('Shelf Books:', books);
         } else {
           setError('Error fetching profile data');
           navigate('/login');
@@ -44,19 +53,24 @@ const Profile = () => {
     return <div className="loading-message">Loading...</div>;
   }
 
+  const handleBookClick = (book) => {
+    navigate(`/catalog/${book._id}`); // Ensure correct bookId is being passed
+  };
+
   return (
     <div className="profile-container">
-
       <div className="profile-image-container">
         <img
-          src={user.profilepic || '/assets/images/default-avatar.jpg'} // Fallback to a default avatar if missing
+          src={user.profilepic || '/assets/images/default-avatar.jpg'}
           alt={`${user.name}'s avatar`}
           className="profile-image"
         />
       </div>
+
       <div className="profile-header">
         <h1 className="profile-username">{user.name}'s Profile</h1>
       </div>
+
       <div className="profile-info">
         <p className="profile-info-item">
           <strong>Email:</strong> {user.email}
@@ -64,13 +78,18 @@ const Profile = () => {
         <p className="profile-info-item">
           <strong>Bio:</strong> {user.bio || 'No bio provided.'}
         </p>
+
         <div className="profile-shelf">
           <strong>Shelf:</strong>
-          {user.shelf?.length > 0 ? (
+          {shelfBooks.length > 0 ? (
             <ul>
-              {user.shelf.map((book, index) => (
-                <li key={index}>
-                  <img src={book.coverImage} alt={book.title} className="profile-shelf-book-cover" />
+              {shelfBooks.map(book => (
+                <li key={book._id} onClick={() => handleBookClick(book)}>
+                  <img
+                    src={book.coverImage}
+                    alt={book.title}
+                    className="profile-shelf-book-cover"
+                  />
                   <p>{book.title} by {book.author}</p>
                 </li>
               ))}
