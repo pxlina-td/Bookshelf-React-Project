@@ -7,3 +7,4 @@ export const AuthContext = createContext({
     isAuthenticated: false,
     changeAuthState: (authState = {}) => null
 });
+

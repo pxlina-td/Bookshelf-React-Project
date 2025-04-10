@@ -6,10 +6,11 @@ async function requester(method, url, data) {
 
     const accessToken = localStorage.getItem('accessToken');
 
-    // Don't add token for public auth endpoints
+    // Don't add token for public auth endpoints or book-related endpoints
     const isPublic =
         url.includes('/users/register') ||
-        url.includes('/users/login');
+        url.includes('/users/login') ||
+        url.includes('/data/books');  // Exclude books from requiring the token
 
     if (!isPublic && accessToken) {
         options.headers['X-Authorization'] = accessToken;
@@ -38,6 +39,7 @@ async function requester(method, url, data) {
 
     return result;
 }
+
 
 
 export const patch = requester.bind(null, 'PATCH');

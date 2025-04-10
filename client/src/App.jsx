@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import Catalog from "./components/Catalog/Catalog";
@@ -6,48 +7,53 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import { useState } from "react";
+import Logout from "./components/Logout";
 import { AuthContext } from "./contexts/authContext";
 import BookDetails from "./components/Catalog/BookList/BookDetails/BookDetails";
 
-
 function App() {
   const [authState, setAuthState] = useState(() => {
-    const storedToken = localStorage.getItem('accessToken');
-    if (storedToken) {
-      // You could also decode the token to retrieve user info like email, etc.
-      return { accessToken: storedToken};  // Example, adjust according to your data
-    }
-    return {};
+    const token = localStorage.getItem("accessToken");
+    return token ? { accessToken: token } : {};
   });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("accessToken"));
+
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem("accessToken"));
+  }, [authState]); // re-check when authState changes
+
   const changeAuthState = (state) => {
-    localStorage.setItem('accessToken', state.accessToken);
+    if (state?.accessToken) {
+      localStorage.setItem("accessToken", state.accessToken);
+    } else {
+      localStorage.removeItem("accessToken");
+    }
     setAuthState(state);
-  }
+  };
+
   const contextData = {
     userID: authState._id,
     email: authState.email,
     accessToken: authState.accessToken,
     isAuthenticated: !!authState.email,
-    changeAuthState
-  }
+    changeAuthState,
+  };
 
   return (
-    <>
-      <AuthContext.Provider value={contextData}>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/catalog/:bookId" element={<BookDetails/>} />
-          <Route path="/profile/:userId" element={<Profile />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <Footer />
-      </AuthContext.Provider>
-    </>
+    <AuthContext.Provider value={contextData}>
+      <Navbar isLoggedIn={isLoggedIn} userId={authState._id} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/:bookId" element={<BookDetails />} />
+        <Route path="/profile/:userId" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+      </Routes>
+      <Footer />
+    </AuthContext.Provider>
   );
 }
 
