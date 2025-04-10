@@ -1339,30 +1339,6 @@
     var identity = "email";
     var protectedData = {
         users: {
-            "35c62d76-8152-4626-8712-eeb96381bea8": {
-                email: "peter@abv.bg",
-                password: "peter123",
-                name: "Peter",
-                profilepic: "https://images.prismic.io/smi-blog/6c987520-81a6-4d03-acc3-2281bbb8b323_IMG_4795.jpg?auto=compress,format",
-                bio: "A book lover",
-                shelf: []
-            },
-            "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "george@abv.bg",
-                password: "george123",
-                name: "George",
-                profilepic: "https://example.com/george.jpg",
-                bio: "Aspiring writer",
-                shelf: []
-            },
-            "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
-                email: "admin@abv.bg",
-                password: "admin123",
-                name: "Admin",
-                profilepic: "https://preview.redd.it/3fc3wd5xwf171.png?auto=webp&s=efea2e1ae32067ea07fc547585f64a95171c7902",
-                bio: "Administrator of the platform",
-                shelf: []
-            },
             "ddd6329f-3cdd-4072-87b2-af9dbbe15033":{
                 email:"ivs@gmail.com",
                 password:"123123123",
@@ -1378,6 +1354,7 @@
     var seedData = {
         books: {
             "book1": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "1",
                 "title": "To Kill a Mockingbird",
                 "author": "Harper Lee",
@@ -1387,6 +1364,7 @@
                 "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVo4KYmcwAMzNQy2_Larrs0NfPGXuHEwkVQ&s"
             },
             "book2": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "2",
                 "title": "1984",
                 "author": "George Orwell",
@@ -1396,6 +1374,7 @@
                 "coverImage": "https://biblio.bg/files/pic_prod_1/thumbs/300x457/1/IMP_1984_35373_1.jpg"
             },
             "book3": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "3",
                 "title": "Pride and Prejudice",
                 "author": "Jane Austen",
@@ -1405,6 +1384,7 @@
                 "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg"
             },
             "book4": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "4",
                 "title": "The Great Gatsby",
                 "author": "F. Scott Fitzgerald",
@@ -1414,6 +1394,7 @@
                 "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1738790966i/4671.jpg"
             },
             "book5": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "5",
                 "title": "Moby-Dick",
                 "author": "Herman Melville",
@@ -1423,6 +1404,7 @@
                 "coverImage": "https://m.media-amazon.com/images/I/91xNmlf86yL.jpg"
             },
             "book6": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "6",
                 "title": "The Catcher in the Rye",
                 "author": "J.D. Salinger",
@@ -1432,6 +1414,7 @@
                 "coverImage": "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg"
             },
             "book7": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "7",
                 "title": "Brave New World",
                 "author": "Aldous Huxley",
@@ -1441,6 +1424,7 @@
                 "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtkrn8iXfitBLLBWvLt7VnijFVeKpHknkxw&s"
             },
             "book8": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "8",
                 "title": "The Hobbit",
                 "author": "J.R.R. Tolkien",
@@ -1470,6 +1454,7 @@
                 "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/1f/Roadmarks_first.jpg"
             },
             "book11": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "11",
                 "title": "Wuthering Heights",
                 "author": "Emily Brontë",
@@ -1489,6 +1474,7 @@
                 "coverImage": "https://m.media-amazon.com/images/I/81TVqiv-ctL._AC_UF1000,1000_QL80_.jpg"
             },
             "book13": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "13",
                 "title": "The Odyssey",
                 "author": "Homer",
@@ -1498,6 +1484,7 @@
                 "coverImage": "https://mpd-biblio-covers.imgix.net/9780312869014.jpg"
             },
             "book14": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "14",
                 "title": "The Lord of the Rings: The Fellowship of the Ring",
                 "author": "J.R.R. Tolkien",
@@ -1507,6 +1494,7 @@
                 "coverImage": "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif"
             },
             "book15": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "15",
                 "title": "The Picture of Dorian Gray",
                 "author": "Oscar Wilde",
@@ -1516,6 +1504,7 @@
                 "coverImage": "https://m.media-amazon.com/images/I/71GdwPedEFL.jpg"
             },
             "book16": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "16",
                 "title": "Crime and Punishment",
                 "author": "Fyodor Dostoevsky",
@@ -1525,6 +1514,7 @@
                 "coverImage": "https://knigomania.bg/media/catalog/product/cache/84fd64f5684a1a3a4881cbc22d142c88/c/r/crime-and-punishment-9780451530066.jpg"
             },
             "book17": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "17",
                 "title": "War and Peace",
                 "author": "Leo Tolstoy",
@@ -1534,6 +1524,7 @@
                 "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1686602284i/177106015.jpg"
             },
             "book18": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "18",
                 "title": "The Priory of the Orange Tree",
                 "author": "Samantha Shannon",
@@ -1543,6 +1534,7 @@
                 "coverImage": "https://m.media-amazon.com/images/I/91ZQaXqO2nL._AC_UF1000,1000_QL80_.jpg"
             },
             "book19": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "19",
                 "title": "The Goldfinch",
                 "author": "Donna Tartt",
@@ -1552,6 +1544,7 @@
                 "coverImage": "https://upload.wikimedia.org/wikipedia/en/e/eb/The_goldfinch_by_donna_tart.png"
             },
             "book20": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "20",
                 "title": "If We Were Villains",
                 "author": "M.L. Rio",
@@ -1561,6 +1554,7 @@
                 "coverImage": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/f/df34b42bf07fa955398bcd53dedd9d10/if-we-were-villains-30.jpg"
             },
             "book21": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_id": "21",
                 "title": "Throne of Glass",
                 "author": "Sarah J. Maas",

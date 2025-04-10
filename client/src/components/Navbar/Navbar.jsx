@@ -42,7 +42,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" >Log out</NavLink>
+              <NavLink to="/register" >Log out</NavLink>
             </li>
           </>
         )}

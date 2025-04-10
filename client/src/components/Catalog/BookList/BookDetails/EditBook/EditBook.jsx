@@ -1,35 +1,25 @@
 import { useParams } from "react-router-dom";
 import { useForm } from "../../../../../hooks/useForm";
-import "./EditBook.css";
-import { getBookById } from "../../../../../api/books-api";
-import { useGetOneBook } from "../../../../../hooks/useBooks";
+import { update } from "../../../../../api/books-api";
 import { useEffect } from "react";
 
-const initialValues = {
-    title: '',
-    author: '',
-    description: '',
-    genre: '',
-    pageCount: '',
-    coverImage: ''
-}
-
-export default function EditBook({ onClose }) {
+export default function EditBook({ book, setBook, onClose }) {
     const { bookId } = useParams();
-    const { book, setBook } = useGetOneBook(bookId);
+
     const { 
         changeHandler,
         submitHandler,
         values,
         setValues 
-    } = useForm(book, (values) => {
-            console.log(values);
-        });
+    } = useForm(book, async (values) => {
+        const updatedBook = await update(bookId, values);
+        setBook(updatedBook);  // Immediately update the book state in the parent
+        onClose();  // Close the modal after updating the book
+    });
 
     useEffect(() => {
-        //update
         setValues(book);
-    }, [book])
+    }, [book]);
 
     return (
         <div className="modal-overlay">
@@ -69,9 +59,7 @@ export default function EditBook({ onClose }) {
 
                     <div className="modal-buttons">
                         <button type="submit">Save Changes</button>
-                        <button type="button" className="cancel-button" onClick={onClose}>
-                            Cancel
-                        </button>
+                        <button type="button" className="cancel-button" onClick={onClose}>Cancel</button>
                     </div>
                 </form>
             </div>

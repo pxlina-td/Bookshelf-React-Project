@@ -1,37 +1,48 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BookDetails.css';
 import EditBook from './EditBook/EditBook';
 import { deleteBook, getBookById } from '../../../../api/books-api';
 import { addToShelf, removeFromShelf } from '../../../../api/books-api';
 import { getMe } from '../../../../api/auth-api';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AuthContext } from '../../../../contexts/authContext';
 
 const BookDetails = () => {
   const [book, setBook] = useState({});
   const [inShelf, setInShelf] = useState(false);
+  const [userId, setUserId] = useState(null);  // State to hold the userId
   const { bookId } = useParams();
-  const { userId, isAuthenticated } = useContext(AuthContext);
   const [showEditModal, setShowEditModal] = useState(false);
-
   const navigate = useNavigate();
 
   useEffect(() => {
-    (async () => {
-      const result = await getBookById(bookId);
-      setBook(result);
+    // Fetch book data
+    const fetchBookData = async () => {
+      try {
+        const result = await getBookById(bookId);
+        setBook(result);
+      } catch (err) {
+        console.error('Error fetching book data:', err.message);
+      }
+    };
 
-      if (isAuthenticated) {
+    // Fetch user data only if authenticated
+    const fetchUserData = async () => {
+      const token = localStorage.getItem('accessToken');
+      if (token) {
         try {
-          const userData = await getMe(); 
+          const userData = await getMe();
+          setUserId(userData._id);  // Set the userId
           const alreadyInShelf = userData.shelf?.some(item => item.bookId === bookId);
-          setInShelf(alreadyInShelf);
+          setInShelf(alreadyInShelf);  // Check if the book is in the shelf
         } catch (err) {
           console.error('Failed to fetch user data:', err.message);
         }
       }
-    })();
-  }, [bookId, isAuthenticated]);
+    };
+
+    fetchBookData();
+    fetchUserData();
+  }, [bookId]);
 
   const deleteBookHandler = async () => {
     try {
@@ -45,9 +56,9 @@ const BookDetails = () => {
   const toggleShelfHandler = async () => {
     try {
       if (inShelf) {
-        removeFromShelf(userId, bookId);
+        await removeFromShelf(userId, bookId);
       } else {
-        addToShelf(userId, bookId);
+        await addToShelf(userId, bookId);
       }
       setInShelf(!inShelf);
     } catch (err) {
@@ -55,6 +66,7 @@ const BookDetails = () => {
     }
   };
 
+  // Check if the current user is the owner of the book
   const isOwner = userId === book._ownerId;
 
   return (
@@ -71,14 +83,16 @@ const BookDetails = () => {
 
           <p className="book-details-description">{book.description}</p>
 
-          {!isOwner && (
+          {/* Show Edit and Delete buttons if the user is the owner */}
+          {isOwner && (
             <div className="book-details-actions">
               <button className="edit-button" onClick={() => setShowEditModal(true)}>Edit</button>
               <button className="delete-button" onClick={deleteBookHandler}>Delete</button>
             </div>
           )}
 
-          {isAuthenticated && (
+          {/* Show Add/Remove to Shelf button if the user is authenticated */}
+          {userId && (
             <div className="book-details-actions">
               <button className="toggle-shelf-button" onClick={toggleShelfHandler}>
                 {inShelf ? 'Remove from Shelf' : 'Add to Shelf'}
@@ -87,7 +101,9 @@ const BookDetails = () => {
           )}
         </div>
       </div>
-      {showEditModal && <EditBook onClose={() => setShowEditModal(false)} />}
+
+      {/* Show EditBook modal if showEditModal is true */}
+      {showEditModal && <EditBook book={book} setBook={setBook} onClose={() => setShowEditModal(false)} />}
     </div>
   );
 };

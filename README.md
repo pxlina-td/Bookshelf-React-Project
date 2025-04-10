@@ -14,6 +14,7 @@ The main "unit" in this platform is the **books catalog**, which can be **viewed
 
 **This project was created by Polina for the Softuni ReactJS course, April 2025.**
 
+
 ## Public Part
 
 This part of the application is accessible to non-registered users. These users can access:
@@ -24,6 +25,8 @@ This part of the application is accessible to non-registered users. These users 
 - **Login/Register** -> Pages for users to register a new account or log in.
 
 ## Private Part
+
+To see functionalities register your profile and add a book to the catalog. Then you can edit, delete, or add it to shelf, just like all other books from the catalog! 
 
 ### Users
 
