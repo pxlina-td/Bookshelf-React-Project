@@ -29,8 +29,6 @@ const Profile = () => {
           const bookPromises = shelf.map(item => getBookById(item.bookId));
           const books = await Promise.all(bookPromises);
           setShelfBooks(books);
-
-          console.log('Shelf Books:', books);
         } else {
           setError('Error fetching profile data');
           navigate('/login');
